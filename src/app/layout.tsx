@@ -16,6 +16,7 @@ const merriweather = Merriweather({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://danhalligan.github.io/pilton-festival'),
   title: 'Pilton Festival - Green Man Day | Community Festival in Somerset',
   description: 'Join us for Pilton Green Man Day, a beloved community festival in Somerset featuring music, food, local crafts, and the ancient Green Man tradition.',
   keywords: ['Pilton Festival', 'Green Man Day', 'Somerset', 'community festival', 'Barnstaple', 'local events'],
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Pilton Festival - Green Man Day',
     description: 'Community festival celebrating the Green Man tradition in Somerset',
-    url: 'https://www.piltonfestival.co.uk',
+    url: 'https://danhalligan.github.io/pilton-festival',
     siteName: 'Pilton Festival',
     locale: 'en_GB',
     type: 'website',
