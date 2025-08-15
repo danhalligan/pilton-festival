@@ -1,0 +1,14 @@
+node_modules
+/.next/
+/out/
+
+# Build outputs
+.next
+out
+
+# Environment variables
+.env*
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts

@@ -1,0 +1,231 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Pilton Festival Green Leaf Design System */
+
+@layer base {
+  html {
+    font-family: Inter, system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-forest-50 text-sage-800;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+    background-image: 
+      radial-gradient(circle at 20% 80%, rgba(34, 197, 94, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(74, 222, 128, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(134, 239, 172, 0.03) 0%, transparent 50%);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold text-forest-800;
+  }
+  
+  h1 {
+    @apply text-4xl lg:text-5xl;
+  }
+  
+  h2 {
+    @apply text-3xl lg:text-4xl;
+  }
+  
+  h3 {
+    @apply text-2xl lg:text-3xl;
+  }
+  
+  h4 {
+    @apply text-xl lg:text-2xl;
+  }
+}
+
+@layer components {
+  /* Natural Leaf Border Frame Component */
+  .leaf-frame {
+    position: relative;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+    border-radius: 1.5rem;
+    overflow: hidden;
+  }
+  
+  .leaf-frame::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+      #22c55e 0%, #4ade80 25%, #86efac 50%, 
+      #4ade80 75%, #22c55e 100%);
+    border-radius: 1.5rem;
+    z-index: -1;
+    animation: leafShimmer 4s ease-in-out infinite;
+  }
+  
+  .leaf-frame::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(ellipse 120px 60px at top left, #86efac40 0%, transparent 50%),
+      radial-gradient(ellipse 80px 40px at top right, #4ade8040 0%, transparent 50%),
+      radial-gradient(ellipse 100px 50px at bottom left, #22c55e40 0%, transparent 50%),
+      radial-gradient(ellipse 90px 45px at bottom right, #86efac40 0%, transparent 50%),
+      radial-gradient(ellipse 60px 30px at center top, #4ade8030 0%, transparent 50%),
+      radial-gradient(ellipse 70px 35px at center bottom, #22c55e30 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 1;
+    border-radius: 1.5rem;
+  }
+  
+  .leaf-frame > * {
+    position: relative;
+    z-index: 2;
+  }
+  
+  @keyframes leafShimmer {
+    0%, 100% { 
+      background: linear-gradient(45deg, 
+        #22c55e 0%, #4ade80 25%, #86efac 50%, 
+        #4ade80 75%, #22c55e 100%);
+    }
+    50% { 
+      background: linear-gradient(45deg, 
+        #16a34a 0%, #22c55e 25%, #4ade80 50%, 
+        #22c55e 75%, #16a34a 100%);
+    }
+  }
+  
+  /* Festival Card Component */
+  .festival-card {
+    @apply bg-white rounded-leaf shadow-leaf border border-leaf-light;
+    @apply hover:shadow-forest transition-all duration-300;
+    @apply hover:border-forest-400;
+  }
+  
+  /* Enhanced Button Styles */
+  .btn-primary {
+    @apply bg-forest-600 text-white px-6 py-3 rounded-leaf;
+    @apply hover:bg-forest-700 transition-all duration-200;
+    @apply focus:ring-2 focus:ring-forest-400 focus:ring-opacity-50;
+    @apply font-semibold shadow-lg border border-forest-700;
+    transform: translateY(0);
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(21, 128, 61, 0.2);
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-forest-600 text-forest-700 px-6 py-3 rounded-leaf;
+    @apply hover:bg-forest-600 hover:text-white transition-all duration-200;
+    @apply focus:ring-2 focus:ring-forest-400 focus:ring-opacity-50;
+    @apply font-semibold bg-white shadow-md;
+    transform: translateY(0);
+  }
+  
+  .btn-secondary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 16px rgba(21, 128, 61, 0.15);
+  }
+  
+  /* Green Accent Elements */
+  .green-accent {
+    @apply border-l-4 border-forest-500 pl-4;
+  }
+  
+  .leaf-divider {
+    @apply h-1 bg-gradient-to-r from-forest-600 via-forest-400 to-forest-600;
+    @apply rounded-full my-8;
+  }
+  
+  /* Community Section Styling */
+  .community-highlight {
+    @apply bg-gradient-to-br from-leaf-light to-white;
+    @apply border border-leaf-dark rounded-leaf p-6;
+    @apply shadow-leaf;
+  }
+  
+  /* Enhanced Hero Section */
+  .hero-overlay {
+    background: linear-gradient(135deg, 
+      rgba(21, 128, 61, 0.85) 0%, 
+      rgba(22, 163, 74, 0.75) 50%, 
+      rgba(34, 197, 94, 0.65) 100%);
+    backdrop-filter: blur(1px);
+  }
+  
+  .hero-content {
+    @apply relative z-10 text-white text-center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Enhanced Navigation Styling */
+  .nav-link {
+    @apply text-sage-700 hover:text-forest-600 font-medium;
+    @apply transition-all duration-200;
+    @apply border-b-2 border-transparent hover:border-forest-500;
+    @apply px-2 py-1 rounded-t-md hover:bg-forest-50;
+  }
+  
+  .nav-link.active {
+    @apply text-forest-700 border-forest-600 bg-forest-50;
+  }
+}
+
+@layer utilities {
+  /* Custom utilities for green theme */
+  .text-green-man {
+    @apply text-forest-600;
+  }
+  
+  .bg-green-man {
+    @apply bg-forest-500;
+  }
+  
+  .border-green-man {
+    @apply border-forest-400;
+  }
+  
+  /* Responsive text sizing */
+  .text-responsive-lg {
+    @apply text-lg md:text-xl lg:text-2xl;
+  }
+  
+  .text-responsive-base {
+    @apply text-base md:text-lg;
+  }
+  
+  /* Spacing utilities */
+  .section-padding {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+  
+  .container-padding {
+    @apply px-4 md:px-6 lg:px-8;
+  }
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-forest-400 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-forest-500;
+}
