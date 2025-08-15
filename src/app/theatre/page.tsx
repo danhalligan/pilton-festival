@@ -4,6 +4,7 @@ import { Footer } from '@/components/layout/Footer'
 import { LeafFrame } from '@/components/ui/LeafFrame'
 import { Card } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
+import { getAssetPath } from '@/lib/utils'
 
 export default function TheatrePage() {
   return (
@@ -31,7 +32,7 @@ export default function TheatrePage() {
           {/* Hero Image */}
           <div className="absolute inset-0">
             <img 
-              src="/images/original/final-curtain-panto.jpg"
+              src={getAssetPath("/images/original/final-curtain-panto.jpg")}
               alt="Final Curtain of Pilton Panto"
               className="w-full h-full object-cover"
             />

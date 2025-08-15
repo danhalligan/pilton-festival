@@ -6,6 +6,7 @@ import { LeafFrame } from '@/components/ui/LeafFrame'
 import { Card, CardContent, CardHeader } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { NewsletterSignup } from '@/components/ui/NewsletterSignup'
+import { getAssetPath } from '@/lib/utils'
 
 export default function HomePage() {
   return (
@@ -21,7 +22,7 @@ export default function HomePage() {
               <div className="mb-8 flex justify-center">
                 <div className="w-32 h-32 md:w-48 md:h-48 relative">
                   <Image
-                    src="/logo.png"
+                    src={getAssetPath("/logo.png")}
                     alt="Pilton Festival Green Man Logo"
                     fill
                     className="object-contain drop-shadow-lg"

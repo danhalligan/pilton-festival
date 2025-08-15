@@ -27,3 +27,9 @@ export function slugify(text: string): string {
     .replace(/[\s_-]+/g, '-')
     .replace(/^-+|-+$/g, '')
 }
+
+// Helper function to get correct asset path for GitHub Pages
+export function getAssetPath(path: string): string {
+  const basePath = process.env.NODE_ENV === 'production' ? '/pilton-festival' : ''
+  return `${basePath}${path}`
+}

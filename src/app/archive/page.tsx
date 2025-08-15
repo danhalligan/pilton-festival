@@ -6,66 +6,66 @@ import { LeafFrame } from '@/components/ui/LeafFrame'
 import { Card } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { Gallery, GalleryImage } from '@/components/ui/Gallery'
-
-// Real data for past festivals
-const pastFestivals = [
-  {
-    year: 2024,
-    title: 'Green Man Day 2024',
-    date: 'Saturday, July 20th, 2024',
-    description: 'The 2024 Green Man Day might have been the wettest day of July, but despite that the day was a great community success. The community of Pilton came together under umbrellas and gazebos.',
-    highlights: ['Wettest day of July but still successful', 'Community spirit in the rain', 'Sunday Treasure Hunt held the next day'],
-    images: [
-      {
-        id: '2024-1',
-        src: '/images/original/arrival-pilton-house-2024.jpg',
-        alt: 'Arrival at Pilton House 2024',
-        title: 'Arrival at Pilton House',
-        description: 'The procession arriving at Pilton House despite the weather',
-        year: 2024,
-        category: 'Procession'
-      }
-    ]
-  },
-  {
-    year: 2019,
-    title: 'Green Man Day 2019',
-    date: 'Saturday, July 20th, 2019',
-    description: 'We hope you enjoyed the 2019 Pilton Green Man Day and the Pilton Treasure Hunt which followed on Sunday 21st July. The weekend went very well with the weather threatening to ruin things but relenting on Saturday morning.',
-    highlights: ['Perfect weather after morning threats', 'Great community turnout', 'Successful treasure hunt on Sunday'],
-    images: [
-      {
-        id: '2019-1',
-        src: '/images/original/parade-arrives-2019.jpg',
-        alt: 'The 2019 Parade Arrives',
-        title: 'The Parade Arrives',
-        description: 'The procession arriving in Pilton with great community support',
-        year: 2019,
-        category: 'Procession'
-      }
-    ]
-  },
-  {
-    year: 2017,
-    title: 'Green Man Day 2017',
-    date: 'Saturday, July 15th, 2017',
-    description: 'Green Man Day 2017 saw lots of people braving the light drizzle and occasional harder showers to enjoy the market, food, drink, music, activities, parade and pageant.',
-    highlights: ['Community braved the rain', 'New bunting by Liz Eveleigh', 'Wellies decorating competition'],
-    images: [
-      {
-        id: '2017-1',
-        src: '/images/original/festival-poster-compilation.jpg',
-        alt: 'Festival compilation from mid 2000s',
-        title: 'Festival Memories',
-        description: 'Compilation of colorful images from Pilton Green Man Days in the mid 2000s',
-        year: 2017,
-        category: 'Historical'
-      }
-    ]
-  }
-]
+import { getAssetPath } from '@/lib/utils'
 
 export default function ArchivePage() {
+  // Real data for past festivals
+  const pastFestivals = [
+    {
+      year: 2024,
+      title: 'Green Man Day 2024',
+      date: 'Saturday, July 20th, 2024',
+      description: 'The 2024 Green Man Day might have been the wettest day of July, but despite that the day was a great community success. The community of Pilton came together under umbrellas and gazebos.',
+      highlights: ['Wettest day of July but still successful', 'Community spirit in the rain', 'Sunday Treasure Hunt held the next day'],
+      images: [
+        {
+          id: '2024-1',
+          src: getAssetPath('/images/original/arrival-pilton-house-2024.jpg'),
+          alt: 'Arrival at Pilton House 2024',
+          title: 'Arrival at Pilton House',
+          description: 'The procession arriving at Pilton House despite the weather',
+          year: 2024,
+          category: 'Procession'
+        }
+      ]
+    },
+    {
+      year: 2019,
+      title: 'Green Man Day 2019',
+      date: 'Saturday, July 20th, 2019',
+      description: 'We hope you enjoyed the 2019 Pilton Green Man Day and the Pilton Treasure Hunt which followed on Sunday 21st July. The weekend went very well with the weather threatening to ruin things but relenting on Saturday morning.',
+      highlights: ['Perfect weather after morning threats', 'Great community turnout', 'Successful treasure hunt on Sunday'],
+      images: [
+        {
+          id: '2019-1',
+          src: getAssetPath('/images/original/parade-arrives-2019.jpg'),
+          alt: 'The 2019 Parade Arrives',
+          title: 'The Parade Arrives',
+          description: 'The procession arriving in Pilton with great community support',
+          year: 2019,
+          category: 'Procession'
+        }
+      ]
+    },
+    {
+      year: 2017,
+      title: 'Green Man Day 2017',
+      date: 'Saturday, July 15th, 2017',
+      description: 'Green Man Day 2017 saw lots of people braving the light drizzle and occasional harder showers to enjoy the market, food, drink, music, activities, parade and pageant.',
+      highlights: ['Community braved the rain', 'New bunting by Liz Eveleigh', 'Wellies decorating competition'],
+      images: [
+        {
+          id: '2017-1',
+          src: getAssetPath('/images/original/festival-poster-compilation.jpg'),
+          alt: 'Festival compilation from mid 2000s',
+          title: 'Festival Memories',
+          description: 'Compilation of colorful images from Pilton Green Man Days in the mid 2000s',
+          year: 2017,
+          category: 'Historical'
+        }
+      ]
+    }
+  ]
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />

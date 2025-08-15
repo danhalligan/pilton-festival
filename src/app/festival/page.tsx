@@ -5,6 +5,7 @@ import { LeafFrame } from '@/components/ui/LeafFrame'
 import { Card } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { InteractiveMap } from '@/components/ui/InteractiveMap'
+import { getAssetPath } from '@/lib/utils'
 
 export default function FestivalPage() {
   return (
@@ -39,7 +40,7 @@ export default function FestivalPage() {
           {/* Hero Image */}
           <div className="absolute inset-0">
             <img 
-              src="/images/original/procession-arrival-2025.jpg"
+              src={getAssetPath("/images/original/procession-arrival-2025.jpg")}
               alt="The Procession Arrives in Pilton 2025"
               className="w-full h-full object-cover"
             />

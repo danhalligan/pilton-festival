@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { cn } from '@/lib/utils'
+import { cn, getAssetPath } from '@/lib/utils'
 
 interface HeaderProps {
   className?: string
@@ -25,7 +25,7 @@ export function Header({ className }: HeaderProps) {
           <Link href="/" className="flex items-center space-x-3">
             <div className="w-12 h-12 relative">
               <Image
-                src="/logo.png"
+                src={getAssetPath("/logo.png")}
                 alt="Pilton Festival Green Man Logo"
                 fill
                 className="object-contain"
