@@ -12,7 +12,7 @@ export default function AboutPage() {
 
       <main>
         {/* Hero Section */}
-        <div className="relative bg-forest-600 text-white">
+        <div className="relative bg-forest-600 text-white shadow-lg">
           {/* Background Image */}
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"

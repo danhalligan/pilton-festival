@@ -13,7 +13,7 @@ export default function FestivalPage() {
 
       <main>
         {/* Hero Section */}
-        <div className="relative bg-forest-600 text-white">
+        <div className="relative bg-forest-600 text-white shadow-lg">
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
             <div className="text-center">
               <h1 className="text-4xl md:text-6xl font-display font-bold mb-6 text-white">

@@ -9,10 +9,10 @@ export default function TheatrePage() {
   return (
     <div className="min-h-screen">
       <Header />
-      
+
       <main>
         {/* Hero Section */}
-        <div className="relative bg-forest-600 text-white">
+        <div className="relative bg-forest-600 text-white shadow-lg">
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div className="text-center">
               <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-white">
@@ -22,15 +22,15 @@ export default function TheatrePage() {
                 Annual pantomimes in Pilton Church Hall
               </p>
               <p className="text-lg max-w-2xl mx-auto">
-                The annual Pilton Panto took place in Pilton Church Hall during half-term holiday week 
-                in February and was a great success. Pilton Theatre Productions is a sub-committee 
+                The annual Pilton Panto took place in Pilton Church Hall during half-term holiday week
+                in February and was a great success. Pilton Theatre Productions is a sub-committee
                 of the Pilton Green Man CIO.
               </p>
             </div>
           </div>
           {/* Hero Image */}
           <div className="absolute inset-0">
-            <img 
+            <img
               src={getAssetPath("/images/original/final-curtain-panto.jpg")}
               alt="Final Curtain of Pilton Panto"
               className="w-full h-full object-cover"
@@ -51,7 +51,7 @@ export default function TheatrePage() {
                   <h3 className="text-2xl font-semibold text-forest-500 mb-6">
                     "Red Riding Hood" (2022)
                   </h3>
-                  
+
                   <div className="space-y-4 mb-6">
                     <div>
                       <h4 className="font-semibold text-forest-600">Performance Period</h4>
@@ -66,25 +66,25 @@ export default function TheatrePage() {
                       <p>Great success - well received by the community</p>
                     </div>
                   </div>
-                  
+
                   <p className="mb-6">
-                    The annual Pilton Panto 'Red Riding Hood' took place in Pilton Church Hall 
-                    during half-term holiday week in February and was a great success. Our traditional 
-                    pantomime brings the community together with audience participation, local references, 
+                    The annual Pilton Panto 'Red Riding Hood' took place in Pilton Church Hall
+                    during half-term holiday week in February and was a great success. Our traditional
+                    pantomime brings the community together with audience participation, local references,
                     and plenty of laughs for the whole family.
                   </p>
 
                   <div className="bg-leaf-light/20 p-4 rounded mb-6">
                     <p className="text-sm font-semibold text-forest-700 mb-2">About Future Productions</p>
-                    <p className="text-sm">You can find information about what has happened to Pilton Panto 2024 
-                    and read about Pilton Panto 2023 'Sleeping Beauty' on our website.</p>
+                    <p className="text-sm">You can find information about what has happened to Pilton Panto 2024
+                      and read about Pilton Panto 2023 'Sleeping Beauty' on our website.</p>
                   </div>
-                  
+
                   <Button variant="primary" size="lg">
                     Check for Future Shows
                   </Button>
                 </div>
-                
+
                 <div>
                   <Card>
                     <h3 className="text-xl font-semibold text-forest-700 mb-4">
@@ -108,7 +108,7 @@ export default function TheatrePage() {
                         <p className="text-sm">James Wilson</p>
                       </div>
                     </div>
-                    
+
                     <div className="mt-6 pt-4 border-t">
                       <h4 className="font-semibold text-forest-600 mb-2">Want to Get Involved?</h4>
                       <p className="text-sm mb-4">
@@ -132,29 +132,29 @@ export default function TheatrePage() {
                   <h2 className="text-2xl font-display font-bold text-forest-700 mb-6">
                     Our Theatre Story
                   </h2>
-                  
+
                   <div className="prose prose-lg">
                     <p>
-                      Pilton Theatre was founded in 1991 by a group of enthusiastic locals 
-                      who wanted to bring live entertainment to our community. What started 
-                      as a small amateur dramatic society has grown into a beloved annual 
+                      Pilton Theatre was founded in 1991 by a group of enthusiastic locals
+                      who wanted to bring live entertainment to our community. What started
+                      as a small amateur dramatic society has grown into a beloved annual
                       tradition that brings together performers and audiences from across Devon.
                     </p>
-                    
+
                     <p>
-                      Our annual pantomime has become a cornerstone of the Christmas season 
-                      in Pilton, with many families making it their holiday tradition. Over 
-                      the years, we've performed classics like Cinderella, Jack and the 
+                      Our annual pantomime has become a cornerstone of the Christmas season
+                      in Pilton, with many families making it their holiday tradition. Over
+                      the years, we've performed classics like Cinderella, Jack and the
                       Beanstalk, Snow White, and many others, each with our own local twist.
                     </p>
-                    
+
                     <p>
-                      Beyond pantomime, we've also produced summer plays, murder mysteries, 
-                      and comedy nights, always with the goal of entertaining our community 
+                      Beyond pantomime, we've also produced summer plays, murder mysteries,
+                      and comedy nights, always with the goal of entertaining our community
                       and providing a creative outlet for local talent.
                     </p>
                   </div>
-                  
+
                   <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div className="text-center">
                       <div className="text-2xl font-bold text-forest-600">30+</div>
@@ -207,7 +207,7 @@ export default function TheatrePage() {
                   </div>
                 </div>
                 <p className="text-xs text-gray-500 mt-4">
-                  Pilton Theatre Productions took over the panto in 2016 and has helped raise money 
+                  Pilton Theatre Productions took over the panto in 2016 and has helped raise money
                   through these productions for local causes.
                 </p>
               </Card>
@@ -215,7 +215,7 @@ export default function TheatrePage() {
               <Card>
                 <h3 className="text-lg font-semibold text-forest-700 mb-4">Getting Involved</h3>
                 <p className="text-sm mb-4">
-                  Whether you're interested in acting, singing, helping backstage, 
+                  Whether you're interested in acting, singing, helping backstage,
                   or supporting in other ways, there's a place for you in Pilton Theatre.
                 </p>
                 <div className="space-y-2">

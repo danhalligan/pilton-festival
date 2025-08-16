@@ -17,7 +17,7 @@ export default function HomePage() {
 
       <main>
         {/* Hero Section */}
-        <section className="relative min-h-[70vh] bg-gradient-to-b from-forest-50 to-white">
+        <section className="relative min-h-[70vh] bg-gradient-to-b from-forest-50 to-white shadow-lg">
           <div className="h-full flex items-center justify-center py-16">
             <div className="text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
               {/* Hero Logo */}
