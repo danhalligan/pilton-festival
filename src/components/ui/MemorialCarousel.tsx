@@ -2,7 +2,7 @@
 
 import React, { useState, useCallback } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
-import { cn } from '@/lib/utils'
+import { cn, getAssetPath } from '@/lib/utils'
 import { Card } from './Card'
 import { Button } from './Button'
 import { Memorial } from '@/types/memorials'
@@ -70,7 +70,7 @@ export function MemorialCarousel({ memorials, className }: MemorialCarouselProps
                     {memorial.image ? (
                       <>
                         <img
-                          src={memorial.image}
+                          src={getAssetPath(memorial.image)}
                           alt={memorial.name}
                           className="w-full h-full object-cover"
                         />
