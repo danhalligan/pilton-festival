@@ -1,7 +1,6 @@
 import React from 'react'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
-import { LeafFrame } from '@/components/ui/LeafFrame'
 import { Card } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { getAssetPath } from '@/lib/utils'
@@ -13,7 +12,7 @@ export default function TheatrePage() {
       
       <main>
         {/* Hero Section */}
-        <LeafFrame className="relative bg-forest-600 text-white">
+        <div className="relative bg-forest-600 text-white">
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div className="text-center">
               <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-white">
@@ -38,12 +37,12 @@ export default function TheatrePage() {
             />
             <div className="absolute inset-0 bg-forest-gradient opacity-75"></div>
           </div>
-        </LeafFrame>
+        </div>
 
         {/* Current Production */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <LeafFrame className="mb-12">
-            <div className="bg-white p-8 rounded-leaf">
+          <div className="mb-12">
+            <div className="bg-white p-8 rounded-lg shadow-lg">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div>
                   <h2 className="text-3xl font-display font-bold text-forest-700 mb-4">
@@ -123,13 +122,13 @@ export default function TheatrePage() {
                 </div>
               </div>
             </div>
-          </LeafFrame>
+          </div>
 
           {/* Theatre History */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
             <div className="lg:col-span-2">
-              <LeafFrame>
-                <div className="bg-white p-8 rounded-leaf">
+              <div>
+                <div className="bg-white p-8 rounded-lg shadow-lg">
                   <h2 className="text-2xl font-display font-bold text-forest-700 mb-6">
                     Our Theatre Story
                   </h2>
@@ -175,7 +174,7 @@ export default function TheatrePage() {
                     </div>
                   </div>
                 </div>
-              </LeafFrame>
+              </div>
             </div>
 
             <div className="space-y-6">

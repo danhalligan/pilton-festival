@@ -39,10 +39,10 @@ const locationTypes = {
   stall: { color: 'bg-yellow-500', icon: '🏪', label: 'Stalls' },
 }
 
-export function InteractiveMap({ 
-  className, 
+export function InteractiveMap({
+  className,
   locations = defaultLocations,
-  showLegend = true 
+  showLegend = true
 }: InteractiveMapProps) {
   const [selectedLocation, setSelectedLocation] = useState<MapLocation | null>(null)
   const [hoveredLocation, setHoveredLocation] = useState<MapLocation | null>(null)
@@ -50,22 +50,23 @@ export function InteractiveMap({
   const displayLocation = selectedLocation || hoveredLocation
 
   return (
-    <div className={cn('bg-white rounded-leaf', className)}>
+    <div className={cn('bg-white rounded-lg', className)}>
       <div className="p-4 border-b border-gray-200">
         <h3 className="text-lg font-semibold text-forest-700">Festival Location</h3>
         <p className="text-sm text-gray-600">
-          Pilton Village Green, Pilton, Devon - Interactive map showing the festival location
+          Pilton Street, Pilton, North Devon - Interactive map showing the festival location
         </p>
       </div>
 
       {/* OpenStreetMap Embedded */}
       <div className="h-96 w-full">
+
         <iframe
-          src="https://www.openstreetmap.org/export/embed.html?bbox=-4.0644%2C51.0894%2C-4.0444%2C51.0994&layer=mapnik&marker=51.0944%2C-4.0544"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-4.072%2C51.082%2C-4.052%2C51.092&layer=mapnik&marker=51.087%2C-4.062"
           width="100%"
           height="100%"
           style={{ border: 0 }}
-          title="Pilton Village Green, Devon"
+          title="Pilton Village, North Devon"
           className="rounded-lg"
         />
       </div>
@@ -74,7 +75,7 @@ export function InteractiveMap({
       <div className="p-4 border-t border-gray-200">
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="https://www.google.com/maps/search/Pilton+Village+Green,+Pilton,+Devon/@51.0944,-4.0544,15z"
+            href="https://www.google.com/maps/search/Pilton+Street,+Pilton,+North+Devon/@51.087,-4.062,15z"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-4 py-2 bg-forest-600 text-white rounded-lg hover:bg-forest-700 transition-colors"
@@ -82,7 +83,7 @@ export function InteractiveMap({
             📍 Open in Google Maps
           </a>
           <a
-            href="https://www.openstreetmap.org/?mlat=51.0944&mlon=-4.0544#map=15/51.0944/-4.0544"
+            href="https://www.openstreetmap.org/?mlat=51.087&mlon=-4.062#map=15/51.087/-4.062"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-4 py-2 border-2 border-forest-600 text-forest-700 rounded-lg hover:bg-forest-600 hover:text-white transition-colors"
@@ -105,15 +106,9 @@ export function InteractiveMap({
         <div className="absolute inset-0 p-4">
           {/* Village Green outline */}
           <div className="w-full h-full border-2 border-forest-600 rounded-lg bg-green-50 relative">
-            {/* Trees around the edge */}
-            <div className="absolute top-2 left-2">🌳</div>
-            <div className="absolute top-2 right-2">🌳</div>
-            <div className="absolute bottom-2 left-2">🌳</div>
-            <div className="absolute bottom-2 right-2">🌳</div>
-            
             {/* Village Green label */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-forest-600 font-semibold opacity-30 text-xl">
-              Pilton Village Green
+              Pilton, North Devon
             </div>
           </div>
         </div>
@@ -186,13 +181,13 @@ export function InteractiveMap({
           <div>
             <h5 className="font-semibold text-forest-700 mb-1">Getting There</h5>
             <p className="text-gray-600">
-              Pilton Village Green, Pilton, Devon EX31 1PD
+              Pilton Street, Pilton, North Devon - Easily accessible by car, bus, or on foot from Barnstaple.
             </p>
           </div>
           <div>
             <h5 className="font-semibold text-forest-700 mb-1">Accessibility</h5>
             <p className="text-gray-600">
-              Level grass field. Wheelchair accessible paths to all main areas.
+              Level street. Wheelchair accessible paths to all main areas.
             </p>
           </div>
         </div>

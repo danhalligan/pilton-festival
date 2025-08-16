@@ -56,7 +56,7 @@ export function NewsletterSignup({
     return (
       <div className={cn(
         'text-center',
-        variant === 'card' && 'bg-leaf-light/30 border border-leaf-dark rounded-leaf p-6',
+        variant === 'card' && 'bg-leaf-light/30 border border-leaf-dark rounded-lg p-6',
         className
       )}>
         <div className="text-forest-600 mb-2">
@@ -130,8 +130,8 @@ export function NewsletterSignup({
 
   return (
     <div className={cn(
-      variant === 'card' && 'bg-white border border-leaf-light rounded-leaf p-6 shadow-leaf',
-      variant === 'inline' && 'bg-leaf-light/20 rounded-leaf p-4',
+      variant === 'card' && 'bg-white border border-leaf-light rounded-lg p-6 shadow-leaf',
+      variant === 'inline' && 'bg-leaf-light/20 rounded-lg p-4',
       variant === 'minimal' && '',
       className
     )}>

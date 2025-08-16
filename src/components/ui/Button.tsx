@@ -14,7 +14,7 @@ export function Button({
   children, 
   ...props 
 }: ButtonProps) {
-  const baseClasses = 'inline-flex items-center justify-center font-semibold rounded-leaf transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transform hover:-translate-y-0.5'
+  const baseClasses = 'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transform hover:-translate-y-0.5'
   
   const variantClasses = {
     primary: 'bg-forest-600 text-white hover:bg-forest-700 focus:ring-forest-400 shadow-lg border border-forest-700 hover:shadow-xl',

@@ -68,9 +68,6 @@ const config: Config = {
         '88': '22rem',
         '128': '32rem',
       },
-      borderRadius: {
-        'leaf': '0.75rem',
-      },
       boxShadow: {
         'leaf': '0 4px 6px -1px rgba(64, 145, 108, 0.1), 0 2px 4px -1px rgba(64, 145, 108, 0.06)',
         'forest': '0 10px 15px -3px rgba(27, 67, 50, 0.1), 0 4px 6px -2px rgba(27, 67, 50, 0.05)',

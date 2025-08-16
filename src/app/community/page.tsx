@@ -1,7 +1,6 @@
 import React from 'react'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
-import { LeafFrame } from '@/components/ui/LeafFrame'
 import { Card } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { getAssetPath } from '@/lib/utils'
@@ -13,7 +12,7 @@ export default function CommunityPage() {
 
       <main>
         {/* Hero Section */}
-        <LeafFrame className="relative bg-forest-500 text-white">
+        <div className="relative bg-forest-500 text-white">
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div className="text-center">
               <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-white">
@@ -38,14 +37,14 @@ export default function CommunityPage() {
             />
             <div className="absolute inset-0 bg-forest-gradient opacity-75"></div>
           </div>
-        </LeafFrame>
+        </div>
 
         {/* Main Content */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
           {/* CIO Overview */}
-          <LeafFrame className="mb-12">
-            <div className="bg-white p-8 rounded-leaf">
+          <div className="mb-12">
+            <div className="bg-white p-8 rounded-lg shadow-lg">
               <h2 className="text-3xl font-display font-bold text-forest-700 mb-6">
                 About the Pilton Green Man CIO
               </h2>
@@ -90,11 +89,11 @@ export default function CommunityPage() {
                 </div>
               </div>
             </div>
-          </LeafFrame>
+          </div>
 
           {/* Community Grants */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            <LeafFrame>
+            <div>
               <Card className="h-full">
                 <h2 className="text-2xl font-display font-bold text-forest-700 mb-4">
                   Community Grants
@@ -129,9 +128,9 @@ export default function CommunityPage() {
                   Apply for a Grant
                 </Button>
               </Card>
-            </LeafFrame>
+            </div>
 
-            <LeafFrame>
+            <div>
               <Card className="h-full">
                 <h2 className="text-2xl font-display font-bold text-forest-700 mb-4">
                   Manning's Pit: Saved for the Community
@@ -170,12 +169,12 @@ export default function CommunityPage() {
                   Visit Manning's Pit Website
                 </Button>
               </Card>
-            </LeafFrame>
+            </div>
           </div>
 
           {/* Volunteer Opportunities */}
-          <LeafFrame>
-            <div className="bg-white p-8 rounded-leaf">
+          <div>
+            <div className="bg-white p-8 rounded-lg shadow-lg">
               <div className="text-center mb-8">
                 <h2 className="text-3xl font-display font-bold text-forest-700 mb-4">
                   Get Involved
@@ -226,7 +225,7 @@ export default function CommunityPage() {
                 </Card>
               </div>
             </div>
-          </LeafFrame>
+          </div>
 
         </div>
       </main>

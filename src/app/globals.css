@@ -60,79 +60,16 @@
 
 @layer components {
 
-  /* Natural Leaf Border Frame Component */
-  .leaf-frame {
-    position: relative;
-    padding: 2rem;
-    background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
-    border-radius: 1.5rem;
-    overflow: hidden;
-  }
-
-  .leaf-frame::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg,
-        #22c55e 0%, #4ade80 25%, #86efac 50%,
-        #4ade80 75%, #22c55e 100%);
-    border-radius: 1.5rem;
-    z-index: -1;
-    animation: leafShimmer 4s ease-in-out infinite;
-  }
-
-  .leaf-frame::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image:
-      radial-gradient(ellipse 120px 60px at top left, #86efac40 0%, transparent 50%),
-      radial-gradient(ellipse 80px 40px at top right, #4ade8040 0%, transparent 50%),
-      radial-gradient(ellipse 100px 50px at bottom left, #22c55e40 0%, transparent 50%),
-      radial-gradient(ellipse 90px 45px at bottom right, #86efac40 0%, transparent 50%),
-      radial-gradient(ellipse 60px 30px at center top, #4ade8030 0%, transparent 50%),
-      radial-gradient(ellipse 70px 35px at center bottom, #22c55e30 0%, transparent 50%);
-    pointer-events: none;
-    z-index: 1;
-    border-radius: 1.5rem;
-  }
-
-  .leaf-frame>* {
-    position: relative;
-    z-index: 2;
-  }
-
-  @keyframes leafShimmer {
-
-    0%,
-    100% {
-      background: linear-gradient(45deg,
-          #22c55e 0%, #4ade80 25%, #86efac 50%,
-          #4ade80 75%, #22c55e 100%);
-    }
-
-    50% {
-      background: linear-gradient(45deg,
-          #16a34a 0%, #22c55e 25%, #4ade80 50%,
-          #22c55e 75%, #16a34a 100%);
-    }
-  }
 
   /* Festival Card Component */
   .festival-card {
-    @apply bg-white rounded-leaf shadow-leaf;
+    @apply bg-white rounded-lg shadow-leaf;
     @apply hover:shadow-forest transition-all duration-300;
   }
 
   /* Enhanced Button Styles */
   .btn-primary {
-    @apply bg-forest-600 text-white px-6 py-3 rounded-leaf;
+    @apply bg-forest-600 text-white px-6 py-3 rounded-lg;
     @apply hover:bg-forest-700 transition-all duration-200;
     @apply focus:ring-2 focus:ring-forest-400 focus:ring-opacity-50;
     @apply font-semibold shadow-lg border border-forest-700;
@@ -145,7 +82,7 @@
   }
 
   .btn-secondary {
-    @apply border-2 border-forest-600 text-forest-700 px-6 py-3 rounded-leaf;
+    @apply border-2 border-forest-600 text-forest-700 px-6 py-3 rounded-lg;
     @apply hover:bg-forest-600 hover:text-white transition-all duration-200;
     @apply focus:ring-2 focus:ring-forest-400 focus:ring-opacity-50;
     @apply font-semibold bg-white shadow-md;
@@ -170,7 +107,7 @@
   /* Community Section Styling */
   .community-highlight {
     @apply bg-gradient-to-br from-leaf-light to-white;
-    @apply rounded-leaf p-6;
+    @apply rounded-lg p-6;
     @apply shadow-leaf;
   }
 

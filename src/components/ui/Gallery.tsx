@@ -69,7 +69,7 @@ export function Gallery({
         {images.map((image, index) => (
           <div 
             key={image.id}
-            className="group cursor-pointer overflow-hidden rounded-leaf bg-white shadow-leaf hover:shadow-forest transition-all duration-300"
+            className="group cursor-pointer overflow-hidden rounded-lg bg-white shadow-leaf hover:shadow-forest transition-all duration-300"
             onClick={() => openLightbox(image, index)}
           >
             <div className="relative aspect-square overflow-hidden">

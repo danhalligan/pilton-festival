@@ -108,7 +108,7 @@ export function ContactForm({
   if (isSubmitted) {
     return (
       <div className={cn(
-        'bg-leaf-light/30 border border-leaf-dark rounded-leaf p-6 text-center',
+        'bg-leaf-light/30 border border-leaf-dark rounded-lg p-6 text-center',
         className
       )}>
         <div className="text-forest-600 mb-4">

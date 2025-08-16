@@ -5,7 +5,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
-import { LeafFrame } from '@/components/ui/LeafFrame'
 import { Card, CardContent, CardHeader } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { NewsletterSignup } from '@/components/ui/NewsletterSignup'
@@ -19,8 +18,8 @@ export default function HomePage() {
       <main>
         {/* Hero Section */}
         <section className="relative min-h-[70vh] bg-gradient-to-b from-forest-50 to-white">
-          <LeafFrame variant="hero" size="xl" className="h-full flex items-center justify-center">
-            <div className="text-center max-w-4xl mx-auto">
+          <div className="h-full flex items-center justify-center py-16">
+            <div className="text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
               {/* Hero Logo */}
               <div className="mb-8 flex justify-center">
                 <div className="w-32 h-32 md:w-48 md:h-48 relative">
@@ -53,7 +52,7 @@ export default function HomePage() {
                 </Link>
               </div>
             </div>
-          </LeafFrame>
+          </div>
         </section>
 
         {/* Latest News Section */}
@@ -118,7 +117,7 @@ export default function HomePage() {
         {/* Community Spotlight */}
         <section className="section-padding bg-leaf-light/20">
           <div className="max-w-7xl mx-auto container-padding">
-            <LeafFrame variant="section" size="lg">
+            <div className="bg-white rounded-lg shadow-lg p-8">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
                   <h2 className="text-4xl font-display font-bold text-forest-700 mb-6">
@@ -165,14 +164,14 @@ export default function HomePage() {
                   </div>
                 </div>
               </div>
-            </LeafFrame>
+            </div>
           </div>
         </section>
 
         {/* Call to Action */}
         <section className="section-padding">
           <div className="max-w-4xl mx-auto container-padding text-center">
-            <LeafFrame variant="card" size="lg">
+            <div className="bg-white rounded-lg shadow-lg p-8">
               <h2 className="text-3xl font-display font-bold text-forest-700 mb-4">
                 Join Our Community
               </h2>
@@ -194,7 +193,7 @@ export default function HomePage() {
                   Newsletter Signup
                 </Button>
               </div>
-            </LeafFrame>
+            </div>
           </div>
         </section>
         {/* Newsletter Signup */}

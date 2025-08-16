@@ -1,7 +1,6 @@
 import React from 'react'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
-import { LeafFrame } from '@/components/ui/LeafFrame'
 import { Card } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { InteractiveMap } from '@/components/ui/InteractiveMap'
@@ -11,10 +10,10 @@ export default function FestivalPage() {
   return (
     <div className="min-h-screen">
       <Header />
-      
+
       <main>
         {/* Hero Section */}
-        <LeafFrame className="relative bg-forest-600 text-white">
+        <div className="relative bg-forest-600 text-white">
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
             <div className="text-center">
               <h1 className="text-4xl md:text-6xl font-display font-bold mb-6 text-white">
@@ -24,7 +23,7 @@ export default function FestivalPage() {
                 Third Saturday in July • Join us for our annual community celebration
               </p>
               <p className="text-lg mb-8 max-w-2xl mx-auto">
-                A successful day run by volunteers celebrating the ancient Green Man tradition 
+                A successful day run by volunteers celebrating the ancient Green Man tradition
                 in the historic village of Pilton. All proceeds support local charitable causes.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -39,37 +38,37 @@ export default function FestivalPage() {
           </div>
           {/* Hero Image */}
           <div className="absolute inset-0">
-            <img 
-              src={getAssetPath("/images/original/procession-arrival-2025.jpg")}
-              alt="The Procession Arrives in Pilton 2025"
+            <img
+              src={getAssetPath("/images/original/pilton-street-bunting.jpg")}
+              alt="Pilton Street decorated for the festival"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-forest-gradient opacity-75"></div>
           </div>
-        </LeafFrame>
+        </div>
 
         {/* Festival Information */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            
+
             {/* Main Content */}
             <div className="lg:col-span-2">
-              <LeafFrame>
-                <div className="bg-white p-8 rounded-leaf">
+              <div>
+                <div className="bg-white p-8 rounded-lg shadow-lg">
                   <h2 className="text-3xl font-display font-bold text-forest-700 mb-6">
                     Green Man Day 2025
                   </h2>
-                  
+
                   <div className="prose prose-lg max-w-none">
                     <p>
-                      Thanks to the amazing work of all the volunteers and performers, and all the stalls and activities 
-                      who came and, of course, the weather, which was perfect, Green Man Day 2025 appears to have been 
+                      Thanks to the amazing work of all the volunteers and performers, and all the stalls and activities
+                      who came and, of course, the weather, which was perfect, Green Man Day 2025 appears to have been
                       a great success.
                     </p>
-                    
+
                     <p>
-                      Green Man Day is run entirely by those volunteers. The money raised goes to cover the considerable 
-                      cost of putting on the festival, and the event generates trade for local businesses. Any profit is 
+                      Green Man Day is run entirely by those volunteers. The money raised goes to cover the considerable
+                      cost of putting on the festival, and the event generates trade for local businesses. Any profit is
                       available for local charitable causes.
                     </p>
 
@@ -78,21 +77,21 @@ export default function FestivalPage() {
                         <strong>Flourishing Barnstaple Support</strong>
                       </p>
                       <p className="text-sm">
-                        Pilton Green Man had support this year through the <strong>Flourishing Barnstaple</strong> project. 
-                        This project is funded through the Government's Cultural Development Fund, administered by Arts Council England, 
+                        Pilton Green Man had support this year through the <strong>Flourishing Barnstaple</strong> project.
+                        This project is funded through the Government's Cultural Development Fund, administered by Arts Council England,
                         and is aimed at re-establishing Barnstaple as the cultural centre of Northern Devon.
                       </p>
                     </div>
-                    
+
                     <h3 className="text-xl font-semibold text-forest-600 mt-8 mb-4">The Green Man Procession</h3>
                     <p>
-                      The Green Man Parade starts in The Square at the southern end of Barnstaple High Street and proceeds 
-                      to Pilton House and Rotary Gardens via the Barnstaple High Street, Pilton Causeway and Pilton Street. 
+                      The Green Man Parade starts in The Square at the southern end of Barnstaple High Street and proceeds
+                      to Pilton House and Rotary Gardens via the Barnstaple High Street, Pilton Causeway and Pilton Street.
                       The Green Man Pageant takes place in the Rotary Gardens.
                     </p>
 
                     <h3 className="text-xl font-semibold text-forest-600 mt-8 mb-4">The Green Man Day Programme</h3>
-                    
+
                     <div className="bg-leaf-light/20 p-6 rounded-lg mb-6">
                       <h4 className="font-semibold text-forest-700 mb-3">Saturday 19th July 2025 • Pilton, Barnstaple</h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
@@ -116,35 +115,35 @@ export default function FestivalPage() {
                       <Card>
                         <h4 className="font-semibold text-forest-700 mb-2">The Procession</h4>
                         <p className="text-gray-600">
-                          Starting at 11:00am from The Square in Barnstaple, accompanied by the fabulous Samba Baía, 
+                          Starting at 11:00am from The Square in Barnstaple, accompanied by the fabulous Samba Baía,
                           the procession makes its way through town centre to Pilton Street and Rotary Gardens.
                         </p>
                       </Card>
                       <Card>
                         <h4 className="font-semibold text-forest-700 mb-2">Three Music Stages</h4>
                         <p className="text-gray-600">
-                          Bottom Stage, Garden Stage, and Top Stage featuring local talent including bands, 
+                          Bottom Stage, Garden Stage, and Top Stage featuring local talent including bands,
                           open mic sessions, and community performers.
                         </p>
                       </Card>
                       <Card>
                         <h4 className="font-semibold text-forest-700 mb-2">The Green Man Pageant</h4>
                         <p className="text-gray-600">
-                          Ancient pageant at 12:00pm & 3:00pm in Rotary Gardens representing the ritual between 
+                          Ancient pageant at 12:00pm & 3:00pm in Rotary Gardens representing the ritual between
                           the Prior and Green Man, ending with "The Green Man Lives".
                         </p>
                       </Card>
                       <Card>
                         <h4 className="font-semibold text-forest-700 mb-2">Children's Entertainment</h4>
                         <p className="text-gray-600">
-                          Captain Coconut bubble shows, Uncle Taco's flea circus, Dave Hendy's Punch & Judy, 
+                          Captain Coconut bubble shows, Uncle Taco's flea circus, Dave Hendy's Punch & Judy,
                           plus circus skills workshops throughout the day.
                         </p>
                       </Card>
                     </div>
                   </div>
                 </div>
-              </LeafFrame>
+              </div>
             </div>
 
             {/* Sidebar */}
@@ -221,14 +220,14 @@ export default function FestivalPage() {
                 Festival Site Map
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Find your way around the festival site with our interactive map showing 
+                Find your way around the festival site with our interactive map showing
                 all stages, food vendors, facilities, and activities.
               </p>
             </div>
-            
-            <LeafFrame>
+
+            <div>
               <InteractiveMap />
-            </LeafFrame>
+            </div>
           </div>
         </div>
       </main>

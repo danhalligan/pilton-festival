@@ -1,7 +1,6 @@
 import React from 'react'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
-import { LeafFrame } from '@/components/ui/LeafFrame'
 import { Card } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { ContactForm } from '@/components/ui/ContactForm'
@@ -13,7 +12,7 @@ export default function GetInvolvedPage() {
       
       <main>
         {/* Hero Section */}
-        <LeafFrame className="relative bg-forest-600 text-white">
+        <div className="relative bg-forest-600 text-white">
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div className="text-center">
               <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-white">
@@ -30,12 +29,12 @@ export default function GetInvolvedPage() {
             </div>
           </div>
           <div className="absolute inset-0 bg-forest-gradient opacity-90"></div>
-        </LeafFrame>
+        </div>
 
         {/* Volunteer Opportunities */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <LeafFrame className="mb-12">
-            <div className="bg-white p-8 rounded-leaf">
+          <div className="mb-12">
+            <div className="bg-white p-8 rounded-lg shadow-lg">
               <h2 className="text-3xl font-display font-bold text-forest-700 mb-8 text-center">
                 Volunteer Opportunities
               </h2>
@@ -96,11 +95,11 @@ export default function GetInvolvedPage() {
                 </Card>
               </div>
             </div>
-          </LeafFrame>
+          </div>
 
           {/* Business Partnership */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            <LeafFrame>
+            <div>
               <Card className="h-full">
                 <h2 className="text-2xl font-display font-bold text-forest-700 mb-4">
                   Business Partnership
@@ -137,9 +136,9 @@ export default function GetInvolvedPage() {
                   Become a Partner
                 </Button>
               </Card>
-            </LeafFrame>
+            </div>
 
-            <LeafFrame>
+            <div>
               <Card className="h-full">
                 <h2 className="text-2xl font-display font-bold text-forest-700 mb-4">
                   Stallholder Information
@@ -178,12 +177,12 @@ export default function GetInvolvedPage() {
                   Apply for a Stall
                 </Button>
               </Card>
-            </LeafFrame>
+            </div>
           </div>
 
           {/* Contact Information */}
-          <LeafFrame>
-            <div className="bg-white p-8 rounded-leaf">
+          <div>
+            <div className="bg-white p-8 rounded-lg shadow-lg">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div>
                   <h2 className="text-2xl font-display font-bold text-forest-700 mb-6">
@@ -235,7 +234,7 @@ export default function GetInvolvedPage() {
                 </div>
               </div>
             </div>
-          </LeafFrame>
+          </div>
 
         </div>
       </main>

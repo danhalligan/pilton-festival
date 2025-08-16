@@ -2,7 +2,6 @@ import React from 'react'
 import Link from 'next/link'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
-import { LeafFrame } from '@/components/ui/LeafFrame'
 import { Card } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { Gallery, GalleryImage } from '@/components/ui/Gallery'
@@ -71,26 +70,36 @@ export default function ArchivePage() {
   return (
     <div className="min-h-screen">
       <Header />
-      
+
       <main>
         {/* Hero Section */}
-        <LeafFrame className="relative bg-forest-600 text-white">
+        <div className="relative bg-forest-600 text-white">
+          {/* Background Image */}
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url(${getAssetPath('/images/original/successful-pageant.jpg')})`
+            }}
+          ></div>
+
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-forest-gradient opacity-75"></div>
+
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div className="text-center">
-              <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-white">
+              <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-white drop-shadow-lg">
                 Festival Archive
               </h1>
-              <p className="text-xl md:text-2xl mb-4 text-leaf-light">
+              <p className="text-xl md:text-2xl mb-4 text-leaf-light drop-shadow-md">
                 Celebrating 40 years of community spirit
               </p>
-              <p className="text-lg max-w-2xl mx-auto">
-                Take a journey through the history of Pilton Green Man Day, from our 
+              <p className="text-lg max-w-2xl mx-auto drop-shadow-md">
+                Take a journey through the history of Pilton Green Man Day, from our
                 humble beginnings in 1985 to the vibrant community celebration we know today.
               </p>
             </div>
           </div>
-          <div className="absolute inset-0 bg-forest-gradient opacity-90"></div>
-        </LeafFrame>
+        </div>
 
         {/* Archive Navigation */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -99,7 +108,7 @@ export default function ArchivePage() {
               <Link
                 key={festival.year}
                 href={`#festival-${festival.year}`}
-                className="inline-flex items-center justify-center px-3 py-2 font-semibold rounded-leaf text-forest-700 hover:bg-forest-100 transition-colors"
+                className="inline-flex items-center justify-center px-3 py-2 font-semibold rounded-lg text-forest-700 hover:bg-forest-100 transition-colors"
               >
                 {festival.year}
               </Link>
@@ -115,60 +124,58 @@ export default function ArchivePage() {
           <div className="space-y-16">
             {pastFestivals.map((festival) => (
               <div key={festival.year} id={`festival-${festival.year}`}>
-                <LeafFrame>
-                  <div className="bg-white rounded-leaf p-8">
-                    <div className="text-center mb-8">
-                      <h2 className="text-3xl font-display font-bold text-forest-700 mb-2">
-                        {festival.title}
-                      </h2>
-                      <p className="text-xl text-forest-500 mb-4">{festival.date}</p>
-                      <p className="text-gray-600 max-w-3xl mx-auto">{festival.description}</p>
+                <div className="bg-white rounded-lg shadow-lg p-8">
+                  <div className="text-center mb-8">
+                    <h2 className="text-3xl font-display font-bold text-forest-700 mb-2">
+                      {festival.title}
+                    </h2>
+                    <p className="text-xl text-forest-500 mb-4">{festival.date}</p>
+                    <p className="text-gray-600 max-w-3xl mx-auto">{festival.description}</p>
+                  </div>
+
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+                    <div className="lg:col-span-2">
+                      <h3 className="text-xl font-semibold text-forest-700 mb-4">
+                        Photo Gallery
+                      </h3>
+                      <Gallery
+                        images={festival.images}
+                        columns={festival.images.length >= 6 ? 3 : 2}
+                        showCategories={true}
+                      />
                     </div>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
-                      <div className="lg:col-span-2">
-                        <h3 className="text-xl font-semibold text-forest-700 mb-4">
-                          Photo Gallery
+                    <div>
+                      <Card>
+                        <h3 className="text-lg font-semibold text-forest-700 mb-4">
+                          Festival Highlights
                         </h3>
-                        <Gallery 
-                          images={festival.images}
-                          columns={festival.images.length >= 6 ? 3 : 2}
-                          showCategories={true}
-                        />
-                      </div>
-
-                      <div>
-                        <Card>
-                          <h3 className="text-lg font-semibold text-forest-700 mb-4">
-                            Festival Highlights
-                          </h3>
-                          <ul className="space-y-2">
-                            {festival.highlights.map((highlight, index) => (
-                              <li key={index} className="flex items-start">
-                                <span className="text-forest-500 mr-2">•</span>
-                                <span className="text-sm text-gray-600">{highlight}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </Card>
-                      </div>
-                    </div>
-
-                    <div className="border-t border-gray-200 pt-6">
-                      <div className="flex flex-wrap gap-4 justify-center">
-                        <Button variant="secondary" size="sm">
-                          View Full Gallery
-                        </Button>
-                        <Button variant="ghost" size="sm">
-                          Programme (PDF)
-                        </Button>
-                        <Button variant="ghost" size="sm">
-                          Share Memories
-                        </Button>
-                      </div>
+                        <ul className="space-y-2">
+                          {festival.highlights.map((highlight, index) => (
+                            <li key={index} className="flex items-start">
+                              <span className="text-forest-500 mr-2">•</span>
+                              <span className="text-sm text-gray-600">{highlight}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </Card>
                     </div>
                   </div>
-                </LeafFrame>
+
+                  <div className="border-t border-gray-200 pt-6">
+                    <div className="flex flex-wrap gap-4 justify-center">
+                      <Button variant="secondary" size="sm">
+                        View Full Gallery
+                      </Button>
+                      <Button variant="ghost" size="sm">
+                        Programme (PDF)
+                      </Button>
+                      <Button variant="ghost" size="sm">
+                        Share Memories
+                      </Button>
+                    </div>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -177,92 +184,88 @@ export default function ArchivePage() {
         {/* Historical Timeline */}
         <div className="bg-leaf-light/20 py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <LeafFrame>
-              <div className="bg-white rounded-leaf p-8">
-                <h2 className="text-3xl font-display font-bold text-forest-700 mb-8 text-center">
-                  Festival Timeline
-                </h2>
-                
-                <div className="space-y-6">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-20 h-20 bg-forest-500 rounded-full flex items-center justify-center text-white font-bold">
-                      1982
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-forest-700">Festival Revival</h3>
-                      <p className="text-sm text-gray-600">
-                        Rev. Anthony Geering instrumental in reviving the historic Festival as part of a month-long programme
-                      </p>
-                    </div>
-                  </div>
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              <h2 className="text-3xl font-display font-bold text-forest-700 mb-8 text-center">
+                Festival Timeline
+              </h2>
 
-                  <div className="flex items-center space-x-4">
-                    <div className="w-20 h-20 bg-forest-500 rounded-full flex items-center justify-center text-white font-bold">
-                      1995
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-forest-700">First Green Man Day</h3>
-                      <p className="text-sm text-gray-600">
-                        The first modern Green Man Day was held, with Albert Linacre and his sewing ladies making the distinctive costumes
-                      </p>
-                    </div>
+              <div className="space-y-6">
+                <div className="flex items-center space-x-4">
+                  <div className="w-20 h-20 bg-forest-500 rounded-full flex items-center justify-center text-white font-bold">
+                    1982
                   </div>
-
-                  <div className="flex items-center space-x-4">
-                    <div className="w-20 h-20 bg-forest-500 rounded-full flex items-center justify-center text-white font-bold">
-                      2016
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-forest-700">CIO Formation</h3>
-                      <p className="text-sm text-gray-600">
-                        Pilton Green Man CIO successfully registered with the Charity Commission
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center space-x-4">
-                    <div className="w-20 h-20 bg-forest-600 rounded-full flex items-center justify-center text-white font-bold">
-                      2021
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-forest-700">Manning's Pit Saved</h3>
-                      <p className="text-sm text-gray-600">
-                        On 18th June 2021, Manning's Pit was secured for community and protected forever from development
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center space-x-4">
-                    <div className="w-20 h-20 bg-forest-400 rounded-full flex items-center justify-center text-white font-bold">
-                      2025
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-forest-700">30th Anniversary</h3>
-                      <p className="text-sm text-gray-600">
-                        Celebrating 30 years of the modern Green Man Day tradition with continued community spirit
-                      </p>
-                    </div>
+                  <div>
+                    <h3 className="font-semibold text-forest-700">Festival Revival</h3>
+                    <p className="text-sm text-gray-600">
+                      Rev. Anthony Geering instrumental in reviving the historic Festival as part of a month-long programme
+                    </p>
                   </div>
                 </div>
 
-                <div className="text-center mt-8">
-                  <Button variant="primary">
-                    Submit Your Festival Memories
-                  </Button>
+                <div className="flex items-center space-x-4">
+                  <div className="w-20 h-20 bg-forest-500 rounded-full flex items-center justify-center text-white font-bold">
+                    1995
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-forest-700">First Green Man Day</h3>
+                    <p className="text-sm text-gray-600">
+                      The first modern Green Man Day was held, with Albert Linacre and his sewing ladies making the distinctive costumes
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-4">
+                  <div className="w-20 h-20 bg-forest-500 rounded-full flex items-center justify-center text-white font-bold">
+                    2016
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-forest-700">CIO Formation</h3>
+                    <p className="text-sm text-gray-600">
+                      Pilton Green Man CIO successfully registered with the Charity Commission
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-4">
+                  <div className="w-20 h-20 bg-forest-600 rounded-full flex items-center justify-center text-white font-bold">
+                    2021
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-forest-700">Manning's Pit Saved</h3>
+                    <p className="text-sm text-gray-600">
+                      On 18th June 2021, Manning's Pit was secured for community and protected forever from development
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-4">
+                  <div className="w-20 h-20 bg-forest-400 rounded-full flex items-center justify-center text-white font-bold">
+                    2025
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-forest-700">30th Anniversary</h3>
+                    <p className="text-sm text-gray-600">
+                      Celebrating 30 years of the modern Green Man Day tradition with continued community spirit
+                    </p>
+                  </div>
                 </div>
               </div>
-            </LeafFrame>
+
+              <div className="text-center mt-8">
+                <Button variant="primary">
+                  Submit Your Festival Memories
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Memorial Section */}
         <div className="bg-leaf-light/10 py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <LeafFrame>
-              <div className="bg-white rounded-leaf p-8">
-                <MemorialCarousel memorials={memorials} />
-              </div>
-            </LeafFrame>
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              <MemorialCarousel memorials={memorials} />
+            </div>
           </div>
         </div>
       </main>
