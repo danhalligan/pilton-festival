@@ -51,6 +51,11 @@ const config: Config = {
           700: '#3d563d',
           800: '#334633',
           900: '#2a3a2a',
+        },
+        'programme': {
+          text: '#506C6F',      // Programme text color
+          box: '#D1EAD9',       // Programme box background color
+          border: '#889476',    // Programme box border color
         }
       },
       fontFamily: {

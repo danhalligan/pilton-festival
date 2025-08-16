@@ -18,9 +18,19 @@ export default async function HomePage() {
 
       <main>
         {/* Hero Section */}
-        <section className="relative min-h-[70vh] bg-gradient-to-b from-forest-50 to-white shadow-lg">
-          <div className="h-full flex items-center justify-center py-16">
+        <section className="relative min-h-[70vh] shadow-lg">
+          {/* Background with green-texture1.jpeg */}
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url(${getAssetPath('/green-texture6.jpeg')})`,
+            }}
+          ></div>
+
+
+          <div className="relative z-10 h-full flex items-center justify-center py-16">
             <div className="text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
               {/* Hero Logo */}
               <div className="mb-8 flex justify-center">
                 <div className="w-32 h-32 md:w-48 md:h-48 relative">
@@ -34,12 +44,16 @@ export default async function HomePage() {
                 </div>
               </div>
 
-              <h1 className="text-5xl md:text-7xl font-display font-bold text-forest-700 mb-6">
-                Pilton Green Man Day
-              </h1>
-              <p className="text-xl md:text-2xl text-forest-600 mb-8 leading-relaxed">
-                A beloved community festival celebrating tradition, music, and local spirit in the heart of Devon
-              </p>
+              {/* Text Box inspired by 2025 programme */}
+              <div className="bg-programme-box border-4 border-programme-border rounded-3xl p-8 md:p-12 mb-8 shadow-lg backdrop-blur-sm">
+                <h1 className="text-5xl md:text-6xl font-display font-bold text-forest-700 mb-6">
+                  Pilton Green Man Day
+                </h1>
+                <p className="text-xl md:text-2xl text-programme-text/80 leading-relaxed">
+                  A community festival celebrating tradition, music, and local spirit in North Devon
+                </p>
+              </div>
+
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/festival">
                   <Button size="lg" variant="primary">
