@@ -8,25 +8,25 @@ interface CardProps {
   hover?: boolean
 }
 
-export function Card({ 
-  children, 
-  className, 
+export function Card({
+  children,
+  className,
   variant = 'default',
-  hover = true 
+  hover = true
 }: CardProps) {
-  const baseClasses = 'bg-white rounded-2xl p-6'
-  
+  const baseClasses = 'bg-white rounded-2xl p-4'
+
   const variantClasses = {
     default: 'shadow-md',
     festival: 'shadow-lg bg-gradient-to-br from-white to-forest-50',
     community: 'shadow-lg bg-gradient-to-br from-white to-leaf-100',
     bordered: 'shadow-xl bg-gradient-to-br from-white to-forest-50'
   }
-  
+
   const hoverClasses = hover ? 'hover:shadow-xl transition-all duration-300 hover:-translate-y-1' : ''
-  
+
   return (
-    <div 
+    <div
       className={cn(
         baseClasses,
         variantClasses[variant],

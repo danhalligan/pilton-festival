@@ -185,8 +185,8 @@ export default function HomePage() {
                     Contact Us
                   </Button>
                 </Link>
-                <Button 
-                  variant="secondary" 
+                <Button
+                  variant="secondary"
                   size="lg"
                   onClick={() => document.getElementById('newsletter')?.scrollIntoView({ behavior: 'smooth' })}
                 >

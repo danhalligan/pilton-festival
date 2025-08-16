@@ -186,7 +186,7 @@ export default function CommunityPage() {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <Card>
+                <Card className="flex flex-col h-full">
                   <h3 className="text-lg font-semibold text-forest-700 mb-3">
                     Festival Volunteers
                   </h3>
@@ -194,12 +194,14 @@ export default function CommunityPage() {
                     Help us make Green Man Day a success. We need volunteers for setup,
                     stewarding, and cleanup.
                   </p>
-                  <Button variant="primary" size="sm" className="w-full">
-                    Volunteer for Festival
-                  </Button>
+                  <div className="mt-auto">
+                    <Button variant="primary" size="sm" className="w-full">
+                      Volunteer for Festival
+                    </Button>
+                  </div>
                 </Card>
 
-                <Card>
+                <Card className="flex flex-col h-full">
                   <h3 className="text-lg font-semibold text-forest-700 mb-3">
                     Committee Members
                   </h3>
@@ -207,21 +209,25 @@ export default function CommunityPage() {
                     Join our organising committee and help shape community projects
                     throughout the year.
                   </p>
-                  <Button variant="secondary" size="sm" className="w-full">
-                    Join Committee
-                  </Button>
+                  <div className="mt-auto">
+                    <Button variant="secondary" size="sm" className="w-full">
+                      Join Committee
+                    </Button>
+                  </div>
                 </Card>
 
-                <Card>
+                <Card className="flex flex-col h-full">
                   <h3 className="text-lg font-semibold text-forest-700 mb-3">
                     Local Businesses
                   </h3>
                   <p className="text-sm mb-4">
                     Partner with us to support community events and reach local customers.
                   </p>
-                  <Button variant="leaf" size="sm" className="w-full">
-                    Business Partnership
-                  </Button>
+                  <div className="mt-auto">
+                    <Button variant="leaf" size="sm" className="w-full">
+                      Business Partnership
+                    </Button>
+                  </div>
                 </Card>
               </div>
             </div>

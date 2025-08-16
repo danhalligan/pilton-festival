@@ -3,6 +3,7 @@ import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { Card } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
+import { getAssetPath } from '@/lib/utils'
 
 export default function AboutPage() {
   return (
@@ -12,21 +13,31 @@ export default function AboutPage() {
       <main>
         {/* Hero Section */}
         <div className="relative bg-forest-600 text-white">
+          {/* Background Image */}
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url(${getAssetPath('/images/original/parade-arrives-2019.jpg')})`
+            }}
+          ></div>
+
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-forest-gradient opacity-75"></div>
+
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div className="text-center">
-              <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-white">
+              <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-white drop-shadow-lg">
                 About Us
               </h1>
-              <p className="text-xl md:text-2xl mb-4 text-leaf-light">
+              <p className="text-xl md:text-2xl mb-4 text-leaf-light drop-shadow-md">
                 The story of Pilton Festival and the Green Man tradition
               </p>
-              <p className="text-lg max-w-2xl mx-auto">
+              <p className="text-lg max-w-2xl mx-auto drop-shadow-md">
                 Discover the rich history of our community festival and the ancient
                 traditions that continue to bring us together in celebration.
               </p>
             </div>
           </div>
-          <div className="absolute inset-0 bg-forest-gradient opacity-90"></div>
         </div>
 
         {/* Main Content */}

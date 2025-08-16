@@ -34,7 +34,7 @@ export function Header({ className }: HeaderProps) {
             </div>
             <div>
               <h1 className="text-2xl font-display font-bold text-forest-700">Pilton Festival</h1>
-              <p className="text-sm text-forest-500">Green Man Day</p>
+              <p className="text-sm text-forest-600">Green Man Day</p>
             </div>
           </Link>
 
