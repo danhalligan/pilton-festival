@@ -130,7 +130,7 @@ export function NewsletterSignup({
 
   return (
     <div className={cn(
-      variant === 'card' && 'bg-white border border-leaf-light rounded-lg p-6 shadow-leaf',
+      variant === 'card' && 'bg-white rounded-lg p-6 shadow-lg',
       variant === 'inline' && 'bg-leaf-light/20 rounded-lg p-4',
       variant === 'minimal' && '',
       className
