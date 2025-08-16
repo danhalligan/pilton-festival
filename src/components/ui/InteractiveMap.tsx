@@ -6,7 +6,7 @@ import { cn, getAssetPath } from '@/lib/utils'
 interface MapLocation {
   id: string
   name: string
-  type: 'stage' | 'food' | 'toilet' | 'parking' | 'entrance' | 'activity' | 'stall'
+  type: 'stage' | 'food' | 'beer' | 'pimms' | 'toilet' | 'parking' | 'entrance' | 'activity' | 'stall'
   x: number // Percentage from left
   y: number // Percentage from top
   description?: string
