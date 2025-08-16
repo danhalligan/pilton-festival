@@ -14,16 +14,16 @@ export function Card({
   variant = 'default',
   hover = true 
 }: CardProps) {
-  const baseClasses = 'bg-white rounded-2xl border'
+  const baseClasses = 'bg-white rounded-2xl p-6'
   
   const variantClasses = {
-    default: 'border-forest-200 shadow-md',
-    festival: 'border-forest-300 shadow-lg bg-gradient-to-br from-white to-forest-50',
-    community: 'border-leaf-300 shadow-lg bg-gradient-to-br from-white to-leaf-100',
-    bordered: 'border-forest-500 shadow-xl bg-gradient-to-br from-white to-forest-50'
+    default: 'shadow-md',
+    festival: 'shadow-lg bg-gradient-to-br from-white to-forest-50',
+    community: 'shadow-lg bg-gradient-to-br from-white to-leaf-100',
+    bordered: 'shadow-xl bg-gradient-to-br from-white to-forest-50'
   }
   
-  const hoverClasses = hover ? 'hover:shadow-xl transition-all duration-300 hover:border-forest-500 hover:-translate-y-1' : ''
+  const hoverClasses = hover ? 'hover:shadow-xl transition-all duration-300 hover:-translate-y-1' : ''
   
   return (
     <div 

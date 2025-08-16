@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
-import { cn } from '@/lib/utils'
+import Image from 'next/image'
+import { cn, getAssetPath } from '@/lib/utils'
 
 interface FooterProps {
   className?: string
@@ -10,21 +11,24 @@ export function Footer({ className }: FooterProps) {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className={cn('bg-forest-700 text-white', className)}>
+    <footer className={cn('bg-forest-900 text-white', className)}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* About */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-                <svg viewBox="0 0 24 24" className="w-6 h-6 text-forest-700" fill="currentColor">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c1.54 0 3-.35 4.29-.99C14.97 19.74 13 16.09 13 12s1.97-7.74 3.29-9.01C15 2.35 13.54 2 12 2z"/>
-                </svg>
+              <div className="w-10 h-10 relative">
+                <Image
+                  src={getAssetPath("/logo.png")}
+                  alt="Pilton Festival Green Man Logo"
+                  fill
+                  className="object-contain"
+                />
               </div>
-              <h3 className="text-xl font-display font-bold">Pilton Festival</h3>
+              <h3 className="text-xl font-display font-bold text-white">Pilton Festival</h3>
             </div>
             <p className="text-forest-100 mb-4">
-              A beloved community festival celebrating the Green Man tradition in Somerset. 
+              A beloved community festival celebrating the Green Man tradition in Devon.
               Run entirely by volunteers for the benefit of our local community.
             </p>
             <p className="text-forest-200 text-sm">
@@ -34,7 +38,7 @@ export function Footer({ className }: FooterProps) {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-4 text-white">Quick Links</h4>
             <ul className="space-y-2">
               <li><Link href="/festival" className="text-forest-100 hover:text-white transition-colors">Current Festival</Link></li>
               <li><Link href="/community/grants" className="text-forest-100 hover:text-white transition-colors">Community Grants</Link></li>
@@ -46,7 +50,7 @@ export function Footer({ className }: FooterProps) {
 
           {/* Contact */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contact</h4>
+            <h4 className="text-lg font-semibold mb-4 text-white">Contact</h4>
             <div className="space-y-2">
               <p className="text-forest-100">
                 <span className="block font-medium">Email:</span>
@@ -57,7 +61,7 @@ export function Footer({ className }: FooterProps) {
               <p className="text-forest-100">
                 <span className="block font-medium">Location:</span>
                 Pilton, Barnstaple<br />
-                Somerset, UK
+                Devon, UK
               </p>
             </div>
           </div>
@@ -74,9 +78,9 @@ export function Footer({ className }: FooterProps) {
             <Link href="/about/trustees" className="text-forest-200 hover:text-white text-sm transition-colors">
               Trustees
             </Link>
-            <a 
-              href="https://www.facebook.com/PiltonGreenManCIO" 
-              target="_blank" 
+            <a
+              href="https://www.facebook.com/PiltonGreenManCIO"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-forest-200 hover:text-white text-sm transition-colors"
             >

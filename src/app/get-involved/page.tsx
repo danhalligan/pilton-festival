@@ -8,7 +8,7 @@ import { ContactForm } from '@/components/ui/ContactForm'
 
 export default function GetInvolvedPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
       <Header />
       
       <main>

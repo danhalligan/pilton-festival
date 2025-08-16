@@ -9,7 +9,7 @@ import { getAssetPath } from '@/lib/utils'
 
 export default function FestivalPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
       <Header />
       
       <main>

@@ -85,7 +85,7 @@ Every page can use the `LeafFrame` component to add the signature green leaf bor
 - **2025 Programme PDF**: Green leaf border design and natural aesthetic
 - **Knockengorroch Festival**: Hero sections and event-driven navigation
 - **Cambridge Folk Festival**: Card layouts and community emphasis
-- **Local Heritage**: Green Man tradition and Somerset community spirit
+- **Local Heritage**: Green Man tradition and Devon community spirit
 
 ## Next Steps (Phase 2)
 

@@ -8,9 +8,9 @@ import { getAssetPath } from '@/lib/utils'
 
 export default function CommunityPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
       <Header />
-      
+
       <main>
         {/* Hero Section */}
         <LeafFrame className="relative bg-forest-500 text-white">
@@ -23,15 +23,15 @@ export default function CommunityPage() {
                 Promoting good citizenship in the community
               </p>
               <p className="text-lg max-w-2xl mx-auto">
-                The Pilton Green Man CIO was set up in December 2016 to promote good citizenship 
-                in the community, principally for the benefit of the people of Pilton, through 
+                The Pilton Green Man CIO was set up in December 2016 to promote good citizenship
+                in the community, principally for the benefit of the people of Pilton, through
                 the making of grants and providing other support.
               </p>
             </div>
           </div>
           {/* Hero Image */}
           <div className="absolute inset-0">
-            <img 
+            <img
               src={getAssetPath("/images/original/mannings-pit-buttercups.jpg")}
               alt="Manning's Pit Buttercups"
               className="w-full h-full object-cover"
@@ -42,7 +42,7 @@ export default function CommunityPage() {
 
         {/* Main Content */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          
+
           {/* CIO Overview */}
           <LeafFrame className="mb-12">
             <div className="bg-white p-8 rounded-leaf">
@@ -51,29 +51,29 @@ export default function CommunityPage() {
               </h2>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div className="prose prose-lg">
-                  <p>
-                    The Pilton Green Man CIO (Charitable Incorporated Organisation) was successfully 
-                    registered with the Charity Commission in 2016. Creation of the Trust limits the 
-                    liability of the organising Committee whilst providing the opportunity to redistribute 
+                  <p className="mb-4">
+                    The Pilton Green Man CIO (Charitable Incorporated Organisation) was successfully
+                    registered with the Charity Commission in 2016. Creation of the Trust limits the
+                    liability of the organising Committee whilst providing the opportunity to redistribute
                     profits from Green Man Day for charitable causes which benefit the people of Pilton.
                   </p>
-                  <p>
-                    The <strong>Pilton Green Man Committee</strong>, which organises and runs the popular 
-                    day in July, continues to operate as a sub-committee of the trust. <strong>Pilton Theatre 
-                    Productions</strong>, which runs the Pilton Panto, is also a sub-committee of the Trust. 
+                  <p className="mb-4">
+                    The <strong>Pilton Green Man Committee</strong>, which organises and runs the popular
+                    day in July, continues to operate as a sub-committee of the trust. <strong>Pilton Theatre
+                      Productions</strong>, which runs the Pilton Panto, is also a sub-committee of the Trust.
                     The <strong>Friends of Manning's Pit</strong> are also now a sub-committee of the CIO.
                   </p>
                   <div className="bg-leaf-light/20 p-4 rounded mt-6">
                     <p className="text-sm font-semibold mb-2">Current Trustees (as at July 2024):</p>
-                    <p className="text-sm">Marc Brayley (Treasurer), Susan O'Grady, Paul Willcox, Esther Davies, 
-                    Vernon Clarke (Chair), Bryn Rees, Wendy Robinson and Martin Haddrill.</p>
+                    <p className="text-sm">Marc Brayley (Treasurer), Susan O'Grady, Paul Willcox, Esther Davies,
+                      Vernon Clarke (Chair), Bryn Rees, Wendy Robinson and Martin Haddrill.</p>
                   </div>
                 </div>
                 <div>
                   <Card>
                     <h3 className="text-xl font-semibold text-forest-700 mb-4">Applications for Awards Invited</h3>
                     <p className="text-sm mb-4">
-                      Please contact a trustee to discuss your ideas for an award which meets the conditions 
+                      Please contact a trustee to discuss your ideas for an award which meets the conditions
                       set out in our award application. We look forward to hearing from you.
                     </p>
                     <div className="space-y-2 text-sm mb-4">
@@ -100,11 +100,11 @@ export default function CommunityPage() {
                   Community Grants
                 </h2>
                 <p className="mb-6">
-                  We provide financial support to local projects, groups, and initiatives that 
-                  benefit the Pilton community. Recent grants have supported youth groups, 
+                  We provide financial support to local projects, groups, and initiatives that
+                  benefit the Pilton community. Recent grants have supported youth groups,
                   environmental projects, and community facilities.
                 </p>
-                
+
                 <h3 className="text-lg font-semibold text-forest-600 mb-3">Recent Grant Recipients (2024)</h3>
                 <div className="space-y-3 mb-6">
                   <div className="p-3 bg-leaf-light/30 rounded">
@@ -124,7 +124,7 @@ export default function CommunityPage() {
                     <p className="text-sm text-gray-600">Replacement shelter tents - £689.64 (2023)</p>
                   </div>
                 </div>
-                
+
                 <Button variant="primary" className="w-full">
                   Apply for a Grant
                 </Button>
@@ -137,20 +137,20 @@ export default function CommunityPage() {
                   Manning's Pit: Saved for the Community
                 </h2>
                 <p className="mb-4 text-sm">
-                  On the edge of Pilton and Bradiford lie some 18 acres of grazing land known locally as 
-                  Manning's Pit. They may be on the edge, but are very much at the heart of the Pilton 
-                  and Bradiford communities. Generations of local people have walked through the fields, 
+                  On the edge of Pilton and Bradiford lie some 18 acres of grazing land known locally as
+                  Manning's Pit. They may be on the edge, but are very much at the heart of the Pilton
+                  and Bradiford communities. Generations of local people have walked through the fields,
                   paddled in the river and done their courting there.
                 </p>
-                
+
                 <div className="bg-forest-50 p-4 rounded mb-4">
                   <h4 className="font-semibold text-forest-700 mb-2">Success Story</h4>
                   <p className="text-sm font-semibold text-forest-600">
-                    On 18th June 2021, Manning's Pit was secured for community and protected 
+                    On 18th June 2021, Manning's Pit was secured for community and protected
                     for ever from development.
                   </p>
                 </div>
-                
+
                 <div className="space-y-3 mb-6 text-sm">
                   <div>
                     <h4 className="font-semibold text-forest-600">The Campaign</h4>
@@ -165,7 +165,7 @@ export default function CommunityPage() {
                     <p>Enormous thanks to Tozers Solicitors for providing free legal advice</p>
                   </div>
                 </div>
-                
+
                 <Button variant="leaf" className="w-full">
                   Visit Manning's Pit Website
                 </Button>
@@ -181,7 +181,7 @@ export default function CommunityPage() {
                   Get Involved
                 </h2>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  There are many ways to contribute to our community. Whether you have time to 
+                  There are many ways to contribute to our community. Whether you have time to
                   volunteer or skills to share, we'd love to hear from you.
                 </p>
               </div>
@@ -192,7 +192,7 @@ export default function CommunityPage() {
                     Festival Volunteers
                   </h3>
                   <p className="text-sm mb-4">
-                    Help us make Green Man Day a success. We need volunteers for setup, 
+                    Help us make Green Man Day a success. We need volunteers for setup,
                     stewarding, and cleanup.
                   </p>
                   <Button variant="primary" size="sm" className="w-full">
@@ -205,7 +205,7 @@ export default function CommunityPage() {
                     Committee Members
                   </h3>
                   <p className="text-sm mb-4">
-                    Join our organising committee and help shape community projects 
+                    Join our organising committee and help shape community projects
                     throughout the year.
                   </p>
                   <Button variant="secondary" size="sm" className="w-full">

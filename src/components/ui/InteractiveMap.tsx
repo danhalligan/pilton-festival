@@ -50,15 +50,57 @@ export function InteractiveMap({
   const displayLocation = selectedLocation || hoveredLocation
 
   return (
-    <div className={cn('bg-white rounded-leaf border border-gray-200', className)}>
+    <div className={cn('bg-white rounded-leaf', className)}>
       <div className="p-4 border-b border-gray-200">
-        <h3 className="text-lg font-semibold text-forest-700">Festival Site Map</h3>
+        <h3 className="text-lg font-semibold text-forest-700">Festival Location</h3>
         <p className="text-sm text-gray-600">
+          Pilton Village Green, Pilton, Devon - Interactive map showing the festival location
+        </p>
+      </div>
+
+      {/* OpenStreetMap Embedded */}
+      <div className="h-96 w-full">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-4.0644%2C51.0894%2C-4.0444%2C51.0994&layer=mapnik&marker=51.0944%2C-4.0544"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          title="Pilton Village Green, Devon"
+          className="rounded-lg"
+        />
+      </div>
+
+      {/* Google Maps Link */}
+      <div className="p-4 border-t border-gray-200">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="https://www.google.com/maps/search/Pilton+Village+Green,+Pilton,+Devon/@51.0944,-4.0544,15z"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-4 py-2 bg-forest-600 text-white rounded-lg hover:bg-forest-700 transition-colors"
+          >
+            📍 Open in Google Maps
+          </a>
+          <a
+            href="https://www.openstreetmap.org/?mlat=51.0944&mlon=-4.0544#map=15/51.0944/-4.0544"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-4 py-2 border-2 border-forest-600 text-forest-700 rounded-lg hover:bg-forest-600 hover:text-white transition-colors"
+          >
+            🗺️ Open in OpenStreetMap
+          </a>
+        </div>
+      </div>
+
+      {/* Site Layout Schematic */}
+      <div className="p-4 border-t border-gray-200">
+        <h4 className="text-lg font-semibold text-forest-700 mb-2">Festival Site Layout</h4>
+        <p className="text-sm text-gray-600 mb-4">
           Click or hover over markers to see more information about each area
         </p>
       </div>
 
-      <div className="relative bg-leaf-light/20 aspect-video">
+      <div className="relative bg-leaf-light/20 aspect-video mx-4">
         {/* Background map illustration */}
         <div className="absolute inset-0 p-4">
           {/* Village Green outline */}
@@ -144,7 +186,7 @@ export function InteractiveMap({
           <div>
             <h5 className="font-semibold text-forest-700 mb-1">Getting There</h5>
             <p className="text-gray-600">
-              Pilton Village Green, Pilton, Somerset BA4 4DF
+              Pilton Village Green, Pilton, Devon EX31 1PD
             </p>
           </div>
           <div>

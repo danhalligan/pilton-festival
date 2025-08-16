@@ -7,9 +7,9 @@ import { Button } from '@/components/ui/Button'
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
       <Header />
-      
+
       <main>
         {/* Hero Section */}
         <LeafFrame className="relative bg-forest-600 text-white">
@@ -22,7 +22,7 @@ export default function AboutPage() {
                 The story of Pilton Festival and the Green Man tradition
               </p>
               <p className="text-lg max-w-2xl mx-auto">
-                Discover the rich history of our community festival and the ancient 
+                Discover the rich history of our community festival and the ancient
                 traditions that continue to bring us together in celebration.
               </p>
             </div>
@@ -32,36 +32,36 @@ export default function AboutPage() {
 
         {/* Main Content */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          
+
           {/* Festival History */}
           <LeafFrame className="mb-12">
             <div className="bg-white p-8 rounded-leaf">
               <h2 className="text-3xl font-display font-bold text-forest-700 mb-8">
                 The Green Man Tradition
               </h2>
-              
+
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div className="prose prose-lg">
-                  <p>
-                    The Green Man is an ancient symbol of rebirth, nature, and the eternal 
-                    cycle of growth. Found in churches, buildings, and folklore throughout 
-                    Britain, the Green Man represents the spirit of the woodlands and the 
+                  <p className="mb-4">
+                    The Green Man is an ancient symbol of rebirth, nature, and the eternal
+                    cycle of growth. Found in churches, buildings, and folklore throughout
+                    Britain, the Green Man represents the spirit of the woodlands and the
                     renewal that comes with each season.
                   </p>
-                  
-                  <p>
-                    In Pilton, the Green Man tradition has been celebrated for generations, 
-                    connecting our community to the natural world around us and to the 
+
+                  <p className="mb-4">
+                    In Pilton, the Green Man tradition has been celebrated for generations,
+                    connecting our community to the natural world around us and to the
                     agricultural heritage that has shaped our landscape for centuries.
                   </p>
-                  
-                  <p>
-                    Our annual Green Man Day celebrates this connection, bringing together 
-                    people of all ages to enjoy music, food, crafts, and community spirit 
-                    in the heart of Somerset countryside.
+
+                  <p className="mb-4">
+                    Our annual Green Man Day celebrates this connection, bringing together
+                    people of all ages to enjoy music, food, crafts, and community spirit
+                    in the heart of Devonshire countryside.
                   </p>
                 </div>
-                
+
                 <div>
                   <Card>
                     <h3 className="text-xl font-semibold text-forest-700 mb-4">
@@ -103,16 +103,16 @@ export default function AboutPage() {
                   Pilton Village
                 </h2>
                 <p className="mb-4">
-                  Nestled in the heart of Somerset, Pilton is a historic village with 
-                  a rich heritage dating back over a thousand years. Our community 
-                  is proud of its agricultural roots and strong tradition of coming 
-                  together to support one another.
+                  Pilton Green Man Day takes place in the village of Pilton, the oldest part of what is now the North Devon town of Barnstaple.
                 </p>
-                
+                <p className="mb-4">
+                  Pilton began life as one of King Alfred's Burghs - a fortified site and township - around 882 AD. The name is thought to come from Pill - meaning creek - and Tun - meaning a stockaded farmstead. The Benedictine Priory of Pilton, founded in the 10th Century as a cell of Malmesbury Abbey and dissolved at The reformation in 1536, stood where the Church of St Mary stands today at the top of Pilton Street.
+                </p>
+
                 <div className="space-y-3 mb-6">
                   <div>
                     <h4 className="font-semibold text-forest-600">Location</h4>
-                    <p className="text-sm">3 miles from Shepton Mallet, Somerset</p>
+                    <p className="text-sm">Just north of Barnstaple, North Devon</p>
                   </div>
                   <div>
                     <h4 className="font-semibold text-forest-600">Population</h4>
@@ -127,7 +127,7 @@ export default function AboutPage() {
                     <p className="text-sm">Village hall, pub, post office, primary school</p>
                   </div>
                 </div>
-                
+
                 <Button variant="leaf" className="w-full">
                   Explore Our Village
                 </Button>
@@ -140,11 +140,11 @@ export default function AboutPage() {
                   Our Organisation
                 </h2>
                 <p className="mb-4">
-                  The Pilton Community Interest Organisation was established to coordinate 
-                  community activities, provide grants to local projects, and ensure the 
+                  The Pilton Community Interest Organisation was established to coordinate
+                  community activities, provide grants to local projects, and ensure the
                   continuation of our cherished traditions.
                 </p>
-                
+
                 <h3 className="text-lg font-semibold text-forest-600 mb-3">Current Trustees</h3>
                 <div className="space-y-2 mb-6">
                   <div className="p-2 bg-leaf-light/30 rounded">
@@ -164,7 +164,7 @@ export default function AboutPage() {
                     <p className="text-sm text-gray-600">Committee Member</p>
                   </div>
                 </div>
-                
+
                 <Button variant="primary" className="w-full">
                   Contact the Committee
                 </Button>
@@ -180,7 +180,7 @@ export default function AboutPage() {
                   Our Values
                 </h2>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  Everything we do is guided by our commitment to community, 
+                  Everything we do is guided by our commitment to community,
                   sustainability, and preserving the best of our local heritage.
                 </p>
               </div>
@@ -194,7 +194,7 @@ export default function AboutPage() {
                   </div>
                   <h3 className="text-lg font-semibold text-forest-700 mb-2">Community First</h3>
                   <p className="text-sm text-gray-600">
-                    Everything we do is for the benefit of our local community, 
+                    Everything we do is for the benefit of our local community,
                     bringing people together and supporting local initiatives.
                   </p>
                 </div>
@@ -207,7 +207,7 @@ export default function AboutPage() {
                   </div>
                   <h3 className="text-lg font-semibold text-forest-700 mb-2">Heritage Preservation</h3>
                   <p className="text-sm text-gray-600">
-                    We're committed to preserving our local traditions, history, 
+                    We're committed to preserving our local traditions, history,
                     and the natural environment for future generations.
                   </p>
                 </div>
@@ -220,7 +220,7 @@ export default function AboutPage() {
                   </div>
                   <h3 className="text-lg font-semibold text-forest-700 mb-2">Sustainable Future</h3>
                   <p className="text-sm text-gray-600">
-                    We strive to make our events and activities environmentally 
+                    We strive to make our events and activities environmentally
                     responsible and sustainable for the long term.
                   </p>
                 </div>

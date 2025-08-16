@@ -1,9 +1,13 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production'
+
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
-  basePath: '/pilton-festival',
-  assetPrefix: '/pilton-festival',
+  ...(isProd && {
+    basePath: '/pilton-festival',
+    assetPrefix: '/pilton-festival',
+  }),
   images: {
     unoptimized: true,
     remotePatterns: [

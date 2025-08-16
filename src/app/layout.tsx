@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Merriweather } from 'next/font/google'
 import './globals.css'
+import { getAssetPath } from '@/lib/utils'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -17,9 +18,9 @@ const merriweather = Merriweather({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://danhalligan.github.io/pilton-festival'),
-  title: 'Pilton Festival - Green Man Day | Community Festival in Somerset',
-  description: 'Join us for Pilton Green Man Day, a beloved community festival in Somerset featuring music, food, local crafts, and the ancient Green Man tradition.',
-  keywords: ['Pilton Festival', 'Green Man Day', 'Somerset', 'community festival', 'Barnstaple', 'local events'],
+  title: 'Pilton Festival - Green Man Day | Community Festival in Devon',
+  description: 'Join us for Pilton Green Man Day, a beloved community festival in Devon featuring music, food, local crafts, and the ancient Green Man tradition.',
+  keywords: ['Pilton Festival', 'Green Man Day', 'Devon', 'community festival', 'Barnstaple', 'local events'],
   authors: [{ name: 'Pilton Green Man CIO' }],
   icons: {
     icon: '/favicon.ico',
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Pilton Festival - Green Man Day',
-    description: 'Community festival celebrating the Green Man tradition in Somerset',
+    description: 'Community festival celebrating the Green Man tradition in Devon',
     url: 'https://danhalligan.github.io/pilton-festival',
     siteName: 'Pilton Festival',
     locale: 'en_GB',
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Pilton Festival - Green Man Day',
-    description: 'Community festival celebrating the Green Man tradition in Somerset',
+    description: 'Community festival celebrating the Green Man tradition in Devon',
     images: ['/logo.png'],
   },
   robots: {
@@ -65,10 +66,21 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const leafTexturePath = getAssetPath('/leaf-texture2.jpg')
+
   return (
     <html lang="en" className={`${inter.variable} ${merriweather.variable}`}>
+      <head>
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            body::before {
+              background-image: url('${leafTexturePath}') !important;
+            }
+          `
+        }} />
+      </head>
       <body className={`${inter.className} antialiased`}>
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen">
           {children}
         </div>
       </body>

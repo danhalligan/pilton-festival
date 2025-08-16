@@ -8,7 +8,7 @@ import { getAssetPath } from '@/lib/utils'
 
 export default function TheatrePage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
       <Header />
       
       <main>
@@ -139,7 +139,7 @@ export default function TheatrePage() {
                       Pilton Theatre was founded in 1991 by a group of enthusiastic locals 
                       who wanted to bring live entertainment to our community. What started 
                       as a small amateur dramatic society has grown into a beloved annual 
-                      tradition that brings together performers and audiences from across Somerset.
+                      tradition that brings together performers and audiences from across Devon.
                     </p>
                     
                     <p>

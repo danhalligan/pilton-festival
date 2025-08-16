@@ -1,5 +1,5 @@
 import React from 'react'
-import { cn, getAssetPath } from '@/lib/utils'
+import { cn } from '@/lib/utils'
 
 interface LeafFrameProps {
   children: React.ReactNode
@@ -28,32 +28,15 @@ export function LeafFrame({
     section: 'bg-white/90 shadow-md rounded-xl'
   }
 
-  const backgroundStyle = {
-    backgroundImage: `url(${getAssetPath('/leaf-texture.jpg')})`,
-    backgroundSize: '400px 400px',
-    backgroundRepeat: 'repeat',
-    backgroundPosition: 'center'
-  }
-
   return (
-    <div className="relative">
-      {/* Subtle tiled background */}
-      <div 
-        className="absolute inset-0 opacity-[0.03] rounded-xl"
-        style={backgroundStyle}
-      />
-      
-      {/* Content container */}
-      <div 
-        className={cn(
-          'relative z-10',
-          sizeClasses[size],
-          variantClasses[variant],
-          className
-        )}
-      >
-        {children}
-      </div>
+    <div 
+      className={cn(
+        sizeClasses[size],
+        variantClasses[variant],
+        className
+      )}
+    >
+      {children}
     </div>
   )
 }
