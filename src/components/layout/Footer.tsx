@@ -14,7 +14,7 @@ export function Footer({ className }: FooterProps) {
     <footer className={cn('relative bg-forest-900 text-white', className)}>
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url(${getAssetPath('/green-texture5.jpeg')})`,
           backgroundBlendMode: 'multiply',
