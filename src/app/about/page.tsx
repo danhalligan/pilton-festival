@@ -68,7 +68,7 @@ export default function AboutPage() {
                   <p className="mb-4">
                     Our annual Green Man Day celebrates this connection, bringing together
                     people of all ages to enjoy music, food, crafts, and community spirit
-                    in the heart of Devonshire countryside.
+                    in North Devon.
                   </p>
                 </div>
 

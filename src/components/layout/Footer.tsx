@@ -38,7 +38,7 @@ export function Footer({ className }: FooterProps) {
               <h3 className="text-xl font-display font-bold text-white">Pilton Festival</h3>
             </div>
             <p className="text-forest-100 mb-4">
-              A beloved community festival celebrating the Green Man tradition in Devon.
+              A community festival celebrating the Green Man tradition in North Devon.
               Run entirely by volunteers for the benefit of our local community.
             </p>
             <p className="text-forest-200 text-sm">
@@ -54,7 +54,7 @@ export function Footer({ className }: FooterProps) {
               <li><Link href="/community/grants" className="text-forest-100 hover:text-white transition-colors">Community Grants</Link></li>
               <li><Link href="/community/manning-pit" className="text-forest-100 hover:text-white transition-colors">Manning's Pit</Link></li>
               <li><Link href="/theatre" className="text-forest-100 hover:text-white transition-colors">Pilton Panto</Link></li>
-              <li><Link href="/contact" className="text-forest-100 hover:text-white transition-colors">Get Involved</Link></li>
+              <li><Link href="/get-involved" className="text-forest-100 hover:text-white transition-colors">Get Involved</Link></li>
             </ul>
           </div>
 
