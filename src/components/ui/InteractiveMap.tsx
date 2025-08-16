@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { cn } from '@/lib/utils'
+import { cn, getAssetPath } from '@/lib/utils'
 
 interface MapLocation {
   id: string
@@ -19,19 +19,31 @@ interface InteractiveMapProps {
 }
 
 const defaultLocations: MapLocation[] = [
-  { id: 'main-stage', name: 'Main Stage', type: 'stage', x: 50, y: 30, description: 'Main performance area with live music throughout the day' },
-  { id: 'food-area', name: 'Food Vendors', type: 'food', x: 25, y: 50, description: 'Local food vendors and refreshments' },
-  { id: 'craft-stalls', name: 'Craft Stalls', type: 'stall', x: 75, y: 40, description: 'Local artisans and handmade crafts' },
-  { id: 'children-area', name: 'Children\'s Activities', type: 'activity', x: 30, y: 70, description: 'Face painting, games, and family activities' },
-  { id: 'main-entrance', name: 'Main Entrance', type: 'entrance', x: 50, y: 90, description: 'Festival entrance and information point' },
-  { id: 'parking', name: 'Car Park', type: 'parking', x: 80, y: 85, description: 'Free parking in adjacent field' },
-  { id: 'toilets-1', name: 'Toilets', type: 'toilet', x: 15, y: 65, description: 'Toilet facilities' },
-  { id: 'toilets-2', name: 'Toilets', type: 'toilet', x: 85, y: 60, description: 'Toilet facilities' },
+  { id: 'top-stage', name: 'Top Stage', type: 'stage', x: 38.5, y: 14, description: 'Main performance area - the primary stage for live music and entertainment' },
+  { id: 'bottom-stage', name: 'Bottom Stage', type: 'stage', x: 38, y: 78, description: 'Secondary performance area for additional acts and entertainment' },
+  { id: 'garden-stage', name: 'Garden Stage', type: 'stage', x: 47, y: 26.5, description: 'Garden performance area for additional acts and entertainment' },
+  { id: 'pageant-arena', name: 'Pageant Arena', type: 'activity', x: 62.5, y: 33, description: 'Central area for pageant performances and community displays' },
+  { id: 'information-tent', name: 'Information & Lost Children', type: 'activity', x: 37, y: 45, description: 'Information point, lost children service, and visitor support' },
+  { id: 'beer-tent', name: 'Beer Tent', type: 'beer', x: 47.5, y: 22.5, description: 'Licensed refreshment tent - all profits go to the next festival' },
+  { id: 'pimms-tent', name: 'Pimm\'s Tent', type: 'pimms', x: 62.5, y: 37, description: 'Pimm\'s and refreshments tent' },
+  { id: 'rotary-gardens', name: 'Rotary Gardens', type: 'activity', x: 52.5, y: 40, description: 'Beautiful garden displays by the local Rotary club' },
+  { id: 'pilton-house', name: 'Pilton House', type: 'activity', x: 49.5, y: 25, description: 'Historic Pilton House - part of the festival grounds' },
+  { id: 'green-man-pub', name: 'Green Man Pub', type: 'beer', x: 38, y: 30, description: 'Local refreshments and traditional pub atmosphere' },
+  { id: 'yeo-deli-bar', name: 'Yeo Deli Bar', type: 'food', x: 44, y: 85.5, description: 'Food and refreshments' },
+  { id: 'pilton-fryer', name: 'Pilton Fryer', type: 'food', x: 40.5, y: 44.5, description: 'Fish and chips and more' },
+  { id: 'public-toilets1', name: 'Public Toilets', type: 'toilet', x: 54.5, y: 47.5, description: 'Public toilet facilities' },
+  { id: 'public-toilets2', name: 'Public Toilets', type: 'toilet', x: 41, y: 25.5, description: 'Public toilet facilities' },
+  { id: 'public-toilets3', name: 'Public Toilets', type: 'toilet', x: 34.5, y: 77.5, description: 'Public toilet facilities' },
+  { id: 'first-aid', name: 'First Aid', type: 'activity', x: 50, y: 50, description: 'First aid and medical assistance point' },
+  { id: 'reform-inn', name: 'Reform Inn', type: 'beer', x: 35, y: 82, description: 'Local refreshments and traditional pub atmosphere' },
+  { id: 'beer-festival', name: 'Beer Festival', type: 'beer', x: 33.5, y: 80.5, description: 'Licensed refreshment tent - all profits go to the next festival' },
 ]
 
 const locationTypes = {
   stage: { color: 'bg-red-500', icon: '🎵', label: 'Stages' },
-  food: { color: 'bg-orange-500', icon: '🍕', label: 'Food & Drink' },
+  food: { color: 'bg-amber-500', icon: '🍕', label: 'Food and drink' },
+  beer: { color: 'bg-orange-500', icon: '🍺', label: 'Beer' },
+  pimms: { color: 'bg-sky-500', icon: '🍹', label: 'Pimms tent' },
   toilet: { color: 'bg-blue-500', icon: '🚻', label: 'Facilities' },
   parking: { color: 'bg-gray-500', icon: '🚗', label: 'Parking' },
   entrance: { color: 'bg-green-500', icon: '🚪', label: 'Entrances' },
@@ -46,21 +58,49 @@ export function InteractiveMap({
 }: InteractiveMapProps) {
   const [selectedLocation, setSelectedLocation] = useState<MapLocation | null>(null)
   const [hoveredLocation, setHoveredLocation] = useState<MapLocation | null>(null)
+  const [isCommandPressed, setIsCommandPressed] = useState(false)
+  const [isMapHovered, setIsMapHovered] = useState(false)
 
   const displayLocation = selectedLocation || hoveredLocation
+
+  // Handle keyboard events for modifier key detection
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.metaKey || e.ctrlKey) {
+        setIsCommandPressed(true)
+      }
+    }
+
+    const handleKeyUp = (e: KeyboardEvent) => {
+      if (!e.metaKey && !e.ctrlKey) {
+        setIsCommandPressed(false)
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    window.addEventListener('keyup', handleKeyUp)
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+      window.removeEventListener('keyup', handleKeyUp)
+    }
+  }, [])
 
   return (
     <div className={cn('bg-white rounded-lg', className)}>
       <div className="p-4 border-b border-gray-200">
-        <h3 className="text-lg font-semibold text-forest-700">Festival Location</h3>
+        <h3 className="text-lg font-semibold text-forest-700">Festival Site Map</h3>
         <p className="text-sm text-gray-600">
-          Pilton Street, Pilton, North Devon - Interactive map showing the festival location
+          Interactive map of Pilton Green Man Day festival site - July 19th, 10am to 5pm
         </p>
       </div>
 
       {/* OpenStreetMap Embedded */}
-      <div className="h-96 w-full">
-
+      <div
+        className="h-96 w-full relative"
+        onMouseEnter={() => setIsMapHovered(true)}
+        onMouseLeave={() => setIsMapHovered(false)}
+      >
         <iframe
           src="https://www.openstreetmap.org/export/embed.html?bbox=-4.072%2C51.082%2C-4.052%2C51.092&layer=mapnik&marker=51.087%2C-4.062"
           width="100%"
@@ -69,6 +109,15 @@ export function InteractiveMap({
           title="Pilton Village, North Devon"
           className="rounded-lg"
         />
+
+        {/* Overlay to prevent interaction unless modifier key is pressed */}
+        {!isCommandPressed && isMapHovered && (
+          <div className="absolute inset-0 bg-transparent rounded-lg flex items-center justify-center">
+            <div className="bg-black bg-opacity-45 text-white px-4 py-2 rounded-lg text-sm font-medium">
+              Hold {navigator.userAgent.includes('Mac') ? '⌘' : 'Ctrl'} to interact with map
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Google Maps Link */}
@@ -95,30 +144,27 @@ export function InteractiveMap({
 
       {/* Site Layout Schematic */}
       <div className="p-4 border-t border-gray-200">
-        <h4 className="text-lg font-semibold text-forest-700 mb-2">Festival Site Layout</h4>
+        <h4 className="text-lg font-semibold text-forest-700 mb-2">Interactive Festival Map</h4>
         <p className="text-sm text-gray-600 mb-4">
-          Click or hover over markers to see more information about each area
+          Click or hover over the numbered markers to see detailed information about each location
         </p>
       </div>
 
       <div className="relative bg-leaf-light/20 aspect-video mx-4">
-        {/* Background map illustration */}
-        <div className="absolute inset-0 p-4">
-          {/* Village Green outline */}
-          <div className="w-full h-full border-2 border-forest-600 rounded-lg bg-green-50 relative">
-            {/* Village Green label */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-forest-600 font-semibold opacity-30 text-xl">
-              Pilton, North Devon
-            </div>
-          </div>
-        </div>
+        {/* Real Festival Map Background */}
+        <div
+          className="absolute inset-0 bg-contain bg-center bg-no-repeat rounded-lg"
+          style={{
+            backgroundImage: `url(${getAssetPath('/images/festival-map.png')})`
+          }}
+        ></div>
 
         {/* Location markers */}
         {locations.map((location) => (
           <div
             key={location.id}
             className={cn(
-              'absolute w-8 h-8 rounded-full border-2 border-white shadow-lg cursor-pointer transition-all duration-200 flex items-center justify-center text-white font-bold text-sm z-10',
+              'absolute w-6 h-6 rounded-full border-2 border-white shadow-lg cursor-pointer transition-all duration-200 flex items-center justify-center text-white font-bold text-sm z-10',
               locationTypes[location.type].color,
               'hover:scale-125 hover:z-20',
               selectedLocation?.id === location.id && 'scale-125 z-20'
