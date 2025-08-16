@@ -4,8 +4,24 @@ import matter from 'gray-matter'
 import { remark } from 'remark'
 import html from 'remark-html'
 import { Memorial, MemorialFrontmatter } from '@/types/memorials'
+import { getAssetPath } from './utils'
 
 const memorialsDirectory = path.join(process.cwd(), 'content/memorials')
+
+// Function to process HTML content and fix image paths for GitHub Pages
+function processImagePaths(htmlContent: string): string {
+  return htmlContent.replace(
+    /<img([^>]*)\ssrc="([^"]*)"([^>]*)>/g,
+    (match, beforeSrc, src, afterSrc) => {
+      // Only process relative paths that start with /
+      if (src.startsWith('/') && !src.startsWith('//')) {
+        const correctedSrc = getAssetPath(src)
+        return `<img${beforeSrc} src="${correctedSrc}"${afterSrc}>`
+      }
+      return match
+    }
+  )
+}
 
 export async function getAllMemorials(): Promise<Memorial[]> {
   // Get file names under /content/memorials
@@ -29,7 +45,7 @@ export async function getAllMemorials(): Promise<Memorial[]> {
         const processedContent = await remark()
           .use(html)
           .process(matterResult.content)
-        const contentHtml = processedContent.toString()
+        const contentHtml = processImagePaths(processedContent.toString())
 
         const frontmatter = matterResult.data as MemorialFrontmatter
 
@@ -58,7 +74,7 @@ export async function getMemorialBySlug(slug: string): Promise<Memorial | null> 
     const processedContent = await remark()
       .use(html)
       .process(matterResult.content)
-    const contentHtml = processedContent.toString()
+    const contentHtml = processImagePaths(processedContent.toString())
 
     const frontmatter = matterResult.data as MemorialFrontmatter
 
