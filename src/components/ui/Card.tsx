@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils'
 interface CardProps {
   children: React.ReactNode
   className?: string
-  variant?: 'default' | 'festival' | 'community' | 'bordered'
+  variant?: 'default' | 'festival' | 'community' | 'theatre' | 'grants' | 'bordered'
   hover?: boolean
 }
 
@@ -20,6 +20,8 @@ export function Card({
     default: 'shadow-md',
     festival: 'shadow-lg bg-gradient-to-br from-white to-forest-50',
     community: 'shadow-lg bg-gradient-to-br from-white to-leaf-100',
+    theatre: 'shadow-lg bg-gradient-to-br from-white to-earth-50',
+    grants: 'shadow-lg bg-gradient-to-br from-white to-sage-50',
     bordered: 'shadow-xl bg-gradient-to-br from-white to-forest-50'
   }
 

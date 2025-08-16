@@ -5,18 +5,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 import { cn } from '@/lib/utils'
 import { Card } from './Card'
 import { Button } from './Button'
-
-interface Memorial {
-  id: string
-  name: string
-  title: string
-  image?: string
-  years?: string
-  shortDescription: string
-  fullStory: string
-  author?: string
-  keyContributions: string[]
-}
+import { Memorial } from '@/types/memorials'
 
 interface MemorialCarouselProps {
   memorials: Memorial[]
@@ -69,12 +58,12 @@ export function MemorialCarousel({ memorials, className }: MemorialCarouselProps
           <div className="flex gap-4">
             {memorials.map((memorial) => (
               <div
-                key={memorial.id}
+                key={memorial.slug}
                 className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 min-w-0"
               >
                 <Card className={cn(
                   'h-full transition-all duration-300 cursor-pointer hover:shadow-lg',
-                  expandedCard === memorial.id && 'ring-2 ring-forest-400'
+                  expandedCard === memorial.slug && 'ring-2 ring-forest-400'
                 )}>
                   {/* Memorial image or placeholder */}
                   <div className="relative h-48 bg-gradient-to-br from-forest-100 to-forest-200 rounded-t-lg overflow-hidden flex items-center justify-center">
@@ -137,20 +126,19 @@ export function MemorialCarousel({ memorials, className }: MemorialCarouselProps
                     <Button
                       variant="ghost"
                       size="sm"
-                      onClick={() => toggleExpanded(memorial.id)}
+                      onClick={() => toggleExpanded(memorial.slug)}
                       className="w-full"
                     >
-                      {expandedCard === memorial.id ? 'Show Less' : 'Read Full Story'}
+                      {expandedCard === memorial.slug ? 'Show Less' : 'Read More'}
                     </Button>
 
                     {/* Expanded content */}
-                    {expandedCard === memorial.id && (
+                    {expandedCard === memorial.slug && (
                       <div className="mt-4 pt-4 border-t border-gray-200 space-y-4">
-                        <div className="prose prose-sm">
-                          <p className="text-sm text-gray-700 leading-relaxed">
-                            {memorial.fullStory}
-                          </p>
-                        </div>
+                        <div
+                          className="prose prose-sm text-sm text-gray-700 leading-relaxed"
+                          dangerouslySetInnerHTML={{ __html: memorial.content }}
+                        />
 
                         {/* All contributions */}
                         <div>

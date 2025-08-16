@@ -66,7 +66,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const leafTexturePath = getAssetPath('/green-texture2.jpeg')
+  const leafTexturePath = getAssetPath('/green-texture4.jpeg')
 
   return (
     <html lang="en" className={`${inter.variable} ${merriweather.variable}`}>

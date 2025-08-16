@@ -1,5 +1,3 @@
-'use client'
-
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -8,9 +6,12 @@ import { Footer } from '@/components/layout/Footer'
 import { Card, CardContent, CardHeader } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { NewsletterSignup } from '@/components/ui/NewsletterSignup'
+import { ScrollToNewsletterButton } from '@/components/ui/ScrollToNewsletterButton'
 import { getAssetPath } from '@/lib/utils'
+import { getFeaturedNewsArticles } from '@/lib/news'
 
-export default function HomePage() {
+export default async function HomePage() {
+  const featuredNews = await getFeaturedNewsArticles(3)
   return (
     <div className="min-h-screen">
       <Header />
@@ -66,50 +67,21 @@ export default function HomePage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <Card variant="festival" hover>
-                <CardHeader>
-                  <h3 className="text-xl font-semibold text-forest-700">Green Man Day 2025 Success</h3>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 mb-4">
-                    Despite the wet weather, our 2025 festival brought the community together
-                    under umbrellas and gazebos for a wonderful celebration.
-                  </p>
-                  <Link href="/archive">
-                    <Button variant="ghost" size="sm">Read More</Button>
-                  </Link>
-                </CardContent>
-              </Card>
-
-              <Card variant="community" hover>
-                <CardHeader>
-                  <h3 className="text-xl font-semibold text-forest-700">Community Grants Available</h3>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 mb-4">
-                    The Pilton Green Man CIO is accepting applications for community grants.
-                    Support local projects that benefit our community.
-                  </p>
-                  <Link href="/community">
-                    <Button variant="leaf" size="sm">Apply Now</Button>
-                  </Link>
-                </CardContent>
-              </Card>
-
-              <Card variant="festival" hover>
-                <CardHeader>
-                  <h3 className="text-xl font-semibold text-forest-700">Manning's Pit Protected</h3>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 mb-4">
-                    18 acres of community land secured forever from development,
-                    thanks to the amazing work of volunteers and supporters.
-                  </p>
-                  <Link href="/community">
-                    <Button variant="ghost" size="sm">Learn More</Button>
-                  </Link>
-                </CardContent>
-              </Card>
+              {featuredNews.map((article) => (
+                <Card key={article.slug} variant={article.variant} hover>
+                  <CardHeader>
+                    <h3 className="text-xl font-semibold text-forest-700">{article.title}</h3>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-600 mb-4">
+                      {article.excerpt}
+                    </p>
+                    <Link href={`/news/${article.slug}`}>
+                      <Button variant="ghost" size="sm">Read More</Button>
+                    </Link>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </section>
@@ -185,13 +157,7 @@ export default function HomePage() {
                     Contact Us
                   </Button>
                 </Link>
-                <Button
-                  variant="secondary"
-                  size="lg"
-                  onClick={() => document.getElementById('newsletter')?.scrollIntoView({ behavior: 'smooth' })}
-                >
-                  Newsletter Signup
-                </Button>
+                <ScrollToNewsletterButton />
               </div>
             </div>
           </div>

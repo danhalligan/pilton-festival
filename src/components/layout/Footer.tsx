@@ -11,8 +11,18 @@ export function Footer({ className }: FooterProps) {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className={cn('bg-forest-900 text-white', className)}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <footer className={cn('relative bg-forest-900 text-white', className)}>
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
+        style={{
+          backgroundImage: `url(${getAssetPath('/green-texture5.jpeg')})`,
+          backgroundBlendMode: 'multiply',
+          backgroundColor: 'rgba(21, 128, 61, 0.3)'
+        }}
+      ></div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* About */}
           <div className="col-span-1 md:col-span-2">
