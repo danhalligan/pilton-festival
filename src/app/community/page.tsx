@@ -62,7 +62,7 @@ export default function CommunityPage() {
                       Productions</strong>, which runs the Pilton Panto, is also a sub-committee of the Trust.
                     The <strong>Friends of Manning's Pit</strong> are also now a sub-committee of the CIO.
                   </p>
-                  <div className="bg-leaf-light/20 p-4 rounded mt-6">
+                  <div className="bg-leaf-light/30 p-4 rounded mt-6">
                     <p className="text-sm font-semibold mb-2">Current Trustees (as at July 2024):</p>
                     <p className="text-sm">Marc Brayley (Treasurer), Susan O'Grady, Paul Willcox, Esther Davies,
                       Vernon Clarke (Chair), Bryn Rees, Wendy Robinson and Martin Haddrill.</p>

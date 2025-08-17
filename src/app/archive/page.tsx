@@ -50,7 +50,7 @@ export default async function ArchivePage() {
         <FestivalTabs festivals={pastFestivals} />
 
         {/* Historical Timeline */}
-        <div className="bg-leaf-light/20 py-16">
+        <div className="bg-forest-800/30 py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-white rounded-lg shadow-lg p-8">
               <h2 className="text-3xl font-display font-bold text-forest-700 mb-8 text-center">

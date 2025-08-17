@@ -22,12 +22,12 @@ interface GalleryProps {
   showCategories?: boolean
 }
 
-export function Gallery({ 
-  images, 
-  className, 
-  columns = 3, 
+export function Gallery({
+  images,
+  className,
+  columns = 3,
   showTitles = true,
-  showCategories = false 
+  showCategories = false
 }: GalleryProps) {
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -67,9 +67,9 @@ export function Gallery({
         className
       )}>
         {images.map((image, index) => (
-          <div 
+          <div
             key={image.id}
-            className="group cursor-pointer overflow-hidden rounded-lg bg-white shadow-leaf hover:shadow-forest transition-all duration-300"
+            className="group cursor-pointer overflow-hidden rounded-lg bg-white shadow-lg hover:shadow-forest transition-all duration-300"
             onClick={() => openLightbox(image, index)}
           >
             <div className="relative aspect-square overflow-hidden">
@@ -185,8 +185,8 @@ export function Gallery({
           </div>
 
           {/* Background click to close */}
-          <div 
-            className="absolute inset-0 -z-10" 
+          <div
+            className="absolute inset-0 -z-10"
             onClick={closeLightbox}
             aria-label="Close gallery"
           />

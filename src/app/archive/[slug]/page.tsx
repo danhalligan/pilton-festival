@@ -68,7 +68,7 @@ export default async function FestivalPage({ params }: FestivalPageProps) {
             <div className="lg:col-span-2">
               <div className="bg-white p-8 rounded-lg shadow-lg">
                 <div className="prose prose-lg prose-forest max-w-none">
-                  <div 
+                  <div
                     dangerouslySetInnerHTML={{ __html: festival.content }}
                     className="text-gray-700 leading-relaxed"
                   />
@@ -142,7 +142,7 @@ export default async function FestivalPage({ params }: FestivalPageProps) {
 
         {/* Photo Gallery */}
         {festival.images && festival.images.length > 0 && (
-          <section className="bg-leaf-light/20 py-16">
+          <section className="bg-forest-800/30 py-16">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="bg-white rounded-lg shadow-lg p-8">
                 <h2 className="text-3xl font-display font-bold text-forest-700 mb-8 text-center">

@@ -54,8 +54,8 @@ export function MemorialCarousel({ memorials, className }: MemorialCarouselProps
 
       <div className="relative">
         {/* Carousel container */}
-        <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex gap-4">
+        <div className="overflow-hidden pb-6" ref={emblaRef}>
+          <div className="flex gap-4 pb-4">
             {memorials.map((memorial) => (
               <div
                 key={memorial.slug}

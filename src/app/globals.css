@@ -16,18 +16,6 @@
     position: relative;
   }
 
-  /* Page-wide leaf texture background */
-  body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.1;
-    pointer-events: none;
-    z-index: -1;
-  }
 
   h1,
   h2,
@@ -60,7 +48,7 @@
 
   /* Festival Card Component */
   .festival-card {
-    @apply bg-white rounded-lg shadow-leaf;
+    @apply bg-white rounded-lg shadow-lg;
     @apply hover:shadow-forest transition-all duration-300;
   }
 
@@ -161,7 +149,7 @@
 
   /* Spacing utilities */
   .section-padding {
-    @apply py-12 md:py-16 lg:py-20;
+    @apply py-8 md:py-8 lg:py-12;
   }
 
   .container-padding {

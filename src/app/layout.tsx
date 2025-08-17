@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter, Merriweather } from 'next/font/google'
 import './globals.css'
-import { getAssetPath } from '@/lib/utils'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -66,19 +65,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const leafTexturePath = getAssetPath('/green-texture4.jpeg')
-
   return (
     <html lang="en" className={`${inter.variable} ${merriweather.variable}`}>
-      <head>
-        <style dangerouslySetInnerHTML={{
-          __html: `
-            body::before {
-              background-image: url('${leafTexturePath}') !important;
-            }
-          `
-        }} />
-      </head>
       <body className={`${inter.className} antialiased`}>
         <div className="min-h-screen">
           {children}

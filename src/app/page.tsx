@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { NewsletterSignup } from '@/components/ui/NewsletterSignup'
 import { ScrollToNewsletterButton } from '@/components/ui/ScrollToNewsletterButton'
+import { ParallaxBackground } from '@/components/ui/ParallaxBackground'
 import { getAssetPath } from '@/lib/utils'
 import { getFeaturedNewsArticles } from '@/lib/news'
 
@@ -18,16 +19,7 @@ export default async function HomePage() {
 
       <main>
         {/* Hero Section */}
-        <section className="relative min-h-[70vh] shadow-lg">
-          {/* Background with green-texture1.jpeg */}
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: `url(${getAssetPath('/green-texture6.jpeg')})`,
-            }}
-          ></div>
-
-
+        <ParallaxBackground backgroundImage="/green-texture6.jpeg">
           <div className="relative z-10 h-full flex items-center justify-center py-16">
             <div className="text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -68,7 +60,7 @@ export default async function HomePage() {
               </div>
             </div>
           </div>
-        </section>
+        </ParallaxBackground>
 
         {/* Latest News Section */}
         <section className="section-padding">
@@ -77,12 +69,11 @@ export default async function HomePage() {
               <h2 className="text-4xl font-display font-bold text-forest-700 mb-4">
                 Latest News & Events
               </h2>
-              <div className="leaf-divider max-w-md mx-auto"></div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {featuredNews.map((article) => (
-                <Card key={article.slug} variant={article.variant} hover>
+                <Card key={article.slug} hover>
                   <CardHeader>
                     <h3 className="text-xl font-semibold text-forest-700">{article.title}</h3>
                   </CardHeader>
@@ -101,15 +92,16 @@ export default async function HomePage() {
         </section>
 
         {/* Community Spotlight */}
-        <section className="section-padding bg-leaf-light/20">
-          <div className="max-w-7xl mx-auto container-padding">
-            <div className="bg-white rounded-lg shadow-lg p-8">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                  <h2 className="text-4xl font-display font-bold text-forest-700 mb-6">
-                    Run by Volunteers, For the Community
-                  </h2>
-                  <div className="space-y-4 text-lg text-gray-700">
+        <ParallaxBackground backgroundImage="/green-texture6.jpeg" muted={true}>
+          <div className="relative z-10 section-padding">
+            <div className="max-w-7xl mx-auto container-padding">
+              <div className="bg-white rounded-lg shadow-lg p-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                  <div>
+                    <h2 className="text-4xl font-display font-bold text-forest-700 mb-6">
+                      Run by Volunteers, For the Community
+                    </h2>
+                    <div className="space-y-4 text-lg text-gray-700">
                     <p>
                       Pilton Green Man Day is entirely organized and run by local volunteers.
                       Every penny raised goes back into the community through grants,
@@ -149,10 +141,11 @@ export default async function HomePage() {
                     </div>
                   </div>
                 </div>
+                </div>
               </div>
             </div>
           </div>
-        </section>
+        </ParallaxBackground>
 
         {/* Call to Action */}
         <section className="section-padding">
@@ -177,15 +170,17 @@ export default async function HomePage() {
           </div>
         </section>
         {/* Newsletter Signup */}
-        <section id="newsletter" className="bg-leaf-light/20 py-16">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <NewsletterSignup
-              variant="card"
-              title="Stay Connected with Pilton Festival"
-              description="Get the latest updates about Green Man Day, community events, theatre productions, and grant opportunities delivered straight to your inbox."
-            />
+        <ParallaxBackground backgroundImage="/green-texture6.jpeg" muted={true}>
+          <div id="newsletter" className="relative z-10 py-16">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+              <NewsletterSignup
+                variant="card"
+                title="Stay Connected with Pilton Festival"
+                description="Get the latest updates about Green Man Day, community events, theatre productions, and grant opportunities delivered straight to your inbox."
+              />
+            </div>
           </div>
-        </section>
+        </ParallaxBackground>
       </main>
 
       <Footer />
