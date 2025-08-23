@@ -9,9 +9,9 @@ import { getNewsArticleBySlug, getAllNewsSlug } from '@/lib/news'
 import { getAssetPath } from '@/lib/utils'
 
 interface NewsPageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export async function generateStaticParams() {
@@ -22,7 +22,8 @@ export async function generateStaticParams() {
 }
 
 export default async function NewsPage({ params }: NewsPageProps) {
-  const article = await getNewsArticleBySlug(params.slug)
+  const { slug } = await params
+  const article = await getNewsArticleBySlug(slug)
 
   if (!article) {
     notFound()

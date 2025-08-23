@@ -165,9 +165,11 @@ export default function CommunityPage() {
                   </div>
                 </div>
 
-                <Button variant="leaf" className="w-full">
-                  Visit Manning's Pit Website
-                </Button>
+                <a href="https://www.manningspit.com/" target="_blank" rel="noopener noreferrer">
+                  <Button variant="leaf" className="w-full">
+                    Visit Manning's Pit Website
+                  </Button>
+                </a>
               </Card>
             </div>
           </div>

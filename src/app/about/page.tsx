@@ -138,9 +138,11 @@ export default function AboutPage() {
                   </div>
                 </div>
 
-                <Button variant="leaf" className="w-full">
-                  Explore Our Village
-                </Button>
+                <a href="https://www.thepiltonstory.org/" target="_blank" rel="noopener noreferrer">
+                  <Button variant="leaf" className="w-full">
+                    Explore the History of Our Village
+                  </Button>
+                </a>
               </Card>
             </div>
 

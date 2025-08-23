@@ -26,12 +26,6 @@ images:
     title: "Top Stage Entertainment"
     description: "Families enjoying live music at the main stage"
     category: "Entertainment"
-  - id: "2019-3"
-    src: "/images/festivals/2019/market-stalls.jpg"
-    alt: "Busy market stalls"
-    title: "Thriving Market"
-    description: "The bustling market atmosphere with diverse stalls"
-    category: "Market"
 pdfBrochure: "/pdfs/festivals/2019-programme.pdf"
 ---
 
@@ -83,8 +77,7 @@ The traditional Green Man pageant took place in Rotary Gardens, featuring our ma
 
 The weekend concluded with the popular Pilton Treasure Hunt on Sunday, July 21st. With continued fine weather, families explored the village solving clues and learning about local history. The event was so popular that we had to print additional clue sheets!
 
-![Busy market stalls](/images/festivals/2019/market-stalls.jpg)
-*The bustling market atmosphere that made Pilton Street come alive*
+*The market was bustling throughout the day with over 40 stalls creating a vibrant atmosphere in Pilton Street*
 
 ## Community Impact
 

@@ -53,6 +53,33 @@ export function Gallery({
     setSelectedImage(images[prevIndex])
   }
 
+  // Keyboard navigation
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!selectedImage) return
+      
+      switch (e.key) {
+        case 'ArrowLeft':
+          e.preventDefault()
+          prevImage()
+          break
+        case 'ArrowRight':
+          e.preventDefault()
+          nextImage()
+          break
+        case 'Escape':
+          e.preventDefault()
+          closeLightbox()
+          break
+      }
+    }
+
+    if (selectedImage) {
+      window.addEventListener('keydown', handleKeyDown)
+      return () => window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [selectedImage, currentImageIndex])
+
   const gridCols = {
     2: 'grid-cols-1 md:grid-cols-2',
     3: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
@@ -132,19 +159,19 @@ export function Gallery({
               <>
                 <button
                   onClick={prevImage}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors"
+                  className="absolute left-2 lg:left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 lg:p-3 rounded-full transition-all duration-200 hover:scale-110"
                   aria-label="Previous image"
                 >
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                   </svg>
                 </button>
                 <button
                   onClick={nextImage}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors"
+                  className="absolute right-2 lg:right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 lg:p-3 rounded-full transition-all duration-200 hover:scale-110"
                   aria-label="Next image"
                 >
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </button>

@@ -26,12 +26,6 @@ images:
     title: "Pageant in the Rain"
     description: "The Green Man Pageant taking place in the new woodland arena despite the weather"
     category: "Pageant"
-  - id: "2017-3"
-    src: "/images/festivals/2017/decorated-wellies.jpg"
-    alt: "Collection of decorated wellies"
-    title: "Decorated Wellies Competition"
-    description: "Creative wellie decorations appeared throughout the village"
-    category: "Community Art"
 pdfBrochure: "/pdfs/festivals/2017-programme.pdf"
 ---
 
@@ -88,8 +82,7 @@ Despite the weather, the Green Man pageant went ahead twice as usual in its stun
 
 After Saturday's challenging weather, Sunday offered redemption with dry conditions and even some sunshine. The family treasure hunt around the village center was particularly well-attended, with participants enjoying exploring Pilton in much more pleasant conditions. The event concluded with tea and cake in the Church Hall.
 
-![Decorated Wellies Competition](/images/festivals/2017/decorated-wellies.jpg)
-*Just some of the thirty-plus decorated wellies that appeared throughout the village, showing community creativity*
+*Over thirty decorated wellies appeared throughout the village in the weeks before the festival, showing incredible community creativity and adding whimsical art to every corner of Pilton*
 
 ## Volunteer Heroes
 

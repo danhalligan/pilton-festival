@@ -20,17 +20,65 @@ images:
     description: "The procession arriving at Pilton House despite the weather"
     category: "Procession"
   - id: "2024-2"
-    src: "/images/festivals/2024/community-under-gazebos.jpg"
-    alt: "Community gathered under gazebos"
-    title: "Community Under Gazebos"
-    description: "Local residents enjoying the festivities despite the rain"
-    category: "Community"
+    src: "/images/festivals/2024/town-crier-parade.jpg"
+    alt: "Town crier leading parade"
+    title: "Town Crier & Samba Band"
+    description: "Barnstaple town crier Tom Evans and the samba band lead the festival parade up Pilton Street"
+    category: "Procession"
   - id: "2024-3"
-    src: "/images/festivals/2024/treasure-hunt.jpg"
-    alt: "Sunday Treasure Hunt participants"
-    title: "Sunday Treasure Hunt"
-    description: "Families enjoying the treasure hunt in better weather on Sunday"
-    category: "Activities"
+    src: "/images/festivals/2024/green-man-portrait.jpg"
+    alt: "The Green Man"
+    title: "The Green Man"
+    description: "Portrait of the Green Man figure, central to the festival tradition"
+    category: "Character"
+  - id: "2024-4"
+    src: "/images/festivals/2024/dragons-in-parade.jpg"
+    alt: "Dragons in festival parade"
+    title: "Red & Green Dragons"
+    description: "Colorful dragon costumes bringing fantasy and excitement to the parade"
+    category: "Procession"
+  - id: "2024-5"
+    src: "/images/festivals/2024/green-woman-parade.jpg"
+    alt: "Green Woman in parade"
+    title: "Green Woman"
+    description: "The Green Woman character complementing the Green Man tradition"
+    category: "Character"
+  - id: "2024-6"
+    src: "/images/festivals/2024/lamb-in-parade.jpg"
+    alt: "Lamb in festival parade"
+    title: "The Festival Lamb"
+    description: "A charming lamb participant in the community procession"
+    category: "Community"
+  - id: "2024-7"
+    src: "/images/festivals/2024/green-man-ice-queen.jpg"
+    alt: "Green Man and Ice Queen"
+    title: "Green Man & Ice Queen Pageant"
+    description: "The dramatic festival pageant featuring the Green Man and Ice Queen"
+    category: "Pageant"
+  - id: "2024-8"
+    src: "/images/festivals/2024/pageant-scene.jpg"
+    alt: "Scene from the pageant"
+    title: "Pageant Performance"
+    description: "A scene from the traditional Green Man pageant in the gardens"
+    category: "Pageant"
+  - id: "2024-9"
+    src: "/images/festivals/2024/meeting-in-street.jpg"
+    alt: "Community meeting during festival"
+    title: "Community Gathering"
+    description: "Festival-goers meeting and socializing in Pilton Street during the celebration"
+    category: "Community"
+  - id: "2024-10"
+    src: "/images/festivals/2024/captain-banjos-band.jpg"
+    alt: "Captain Banjo's street band"
+    title: "Captain Banjo's Street Band"
+    description: "Live music entertainment from Captain Banjo's energetic street band"
+    category: "Entertainment"
+  - id: "2024-11"
+    src: "/images/festivals/2024/parade-church-hall.jpg"
+    alt: "Parade reaches church hall"
+    title: "Parade at Church Hall"
+    description: "The festive parade reaches Pilton Church Hall, a key gathering point"
+    category: "Procession"
 pdfBrochure: "/pdfs/festivals/2024-programme.pdf"
 ---
 
@@ -42,8 +90,8 @@ The 2024 Green Man Day proved that not even the heaviest July rain could dampen 
 
 From the early morning setup, it was clear that this year's festival would be different. The rain started before dawn and continued throughout the day, but our dedicated volunteers pressed on, erecting gazebos, setting up stalls, and preparing for what would become one of our most memorable celebrations.
 
-![Community gathered under gazebos](/images/festivals/2024/community-under-gazebos.jpg)
-*The community came together under gazebos and umbrellas, proving that British weather can't stop a good festival*
+![Arrival at Pilton House](/images/festivals/2024/arrival-pilton-house.jpg)
+*The procession arriving at Pilton House, showing the community determination despite challenging weather*
 
 ## The Procession Proceeds
 
@@ -64,8 +112,7 @@ What struck everyone most about this year's festival was how quickly the communi
 
 Recognizing that the weather had limited outdoor activities, organizers made the brilliant decision to hold the annual Pilton Treasure Hunt on Sunday, July 21st. With clearer skies and dry paths, families enjoyed exploring the village in much more pleasant conditions.
 
-![Sunday Treasure Hunt participants](/images/festivals/2024/treasure-hunt.jpg)
-*Families enjoying the treasure hunt in beautiful weather on Sunday - the answer was "The Priors Ring 1867"*
+*The Sunday Treasure Hunt took place in much better weather conditions, with families exploring the village and discovering "The Priors Ring 1867" as the answer*
 
 ## Financial Impact and Community Support
 

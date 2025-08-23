@@ -51,8 +51,8 @@ export function Footer({ className }: FooterProps) {
             <h4 className="text-lg font-semibold mb-4 text-white">Quick Links</h4>
             <ul className="space-y-2">
               <li><Link href="/festival" className="text-forest-100 hover:text-white transition-colors">Current Festival</Link></li>
+              <li><Link href="/map" className="text-forest-100 hover:text-white transition-colors">Festival Map</Link></li>
               <li><Link href="/community/grants" className="text-forest-100 hover:text-white transition-colors">Community Grants</Link></li>
-              <li><Link href="/community/manning-pit" className="text-forest-100 hover:text-white transition-colors">Manning's Pit</Link></li>
               <li><Link href="/theatre" className="text-forest-100 hover:text-white transition-colors">Pilton Panto</Link></li>
               <li><Link href="/get-involved" className="text-forest-100 hover:text-white transition-colors">Get Involved</Link></li>
             </ul>

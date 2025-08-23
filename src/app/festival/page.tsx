@@ -1,9 +1,9 @@
 import React from 'react'
+import Link from 'next/link'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { Card } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
-import { InteractiveMap } from '@/components/ui/InteractiveMap'
 import { getAssetPath } from '@/lib/utils'
 
 export default function FestivalPage() {
@@ -194,9 +194,11 @@ export default function FestivalPage() {
                 <p className="mb-4 text-sm">
                   Interactive map showing festival layout and facilities.
                 </p>
-                <Button variant="ghost" className="w-full" size="sm">
-                  View Full Map
-                </Button>
+                <Link href="/map">
+                  <Button variant="ghost" className="w-full" size="sm">
+                    View Festival Map
+                  </Button>
+                </Link>
               </Card>
 
               <Card>
@@ -212,24 +214,6 @@ export default function FestivalPage() {
           </div>
         </div>
 
-        {/* Interactive Map Section */}
-        <div className="py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-display font-bold text-forest-700 mb-4">
-                Festival Site Map
-              </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Find your way around the festival site with our interactive map showing
-                all stages, food vendors, facilities, and activities.
-              </p>
-            </div>
-
-            <div>
-              <InteractiveMap />
-            </div>
-          </div>
-        </div>
       </main>
 
       <Footer />

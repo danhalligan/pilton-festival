@@ -11,9 +11,9 @@ import { getFestivalArchiveBySlug, getAllFestivalSlugs } from '@/lib/festivals'
 import { getAssetPath } from '@/lib/utils'
 
 interface FestivalPageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export async function generateStaticParams() {
@@ -24,7 +24,8 @@ export async function generateStaticParams() {
 }
 
 export default async function FestivalPage({ params }: FestivalPageProps) {
-  const festival = await getFestivalArchiveBySlug(params.slug)
+  const { slug } = await params
+  const festival = await getFestivalArchiveBySlug(slug)
 
   if (!festival) {
     notFound()
