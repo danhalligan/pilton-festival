@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Merriweather } from 'next/font/google'
+import { Inter, Metamorphous } from 'next/font/google'
 import './globals.css'
 
 const inter = Inter({
@@ -8,10 +8,10 @@ const inter = Inter({
   display: 'swap',
 })
 
-const merriweather = Merriweather({
+const metamorphous = Metamorphous({
   subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-merriweather',
+  weight: ['400'],
+  variable: '--font-metamorphous',
   display: 'swap',
 })
 
@@ -66,7 +66,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${merriweather.variable}`}>
+    <html lang="en" className={`${inter.variable} ${metamorphous.variable}`}>
       <body className={`${inter.className} antialiased`}>
         <div className="min-h-screen">
           {children}

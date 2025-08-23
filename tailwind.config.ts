@@ -59,9 +59,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        serif: ["var(--font-merriweather)", "Times New Roman", "serif"],
+        serif: ["var(--font-metamorphous)", "Times New Roman", "serif"],
         sans: ["var(--font-inter)", "Helvetica Neue", "Arial", "sans-serif"],
-        display: ["var(--font-merriweather)", "serif"], // For headings
+        display: ["var(--font-metamorphous)", "serif"], // For headings
       },
       backgroundImage: {
         "leaf-border": "url('/images/green-leaf-border.png')",

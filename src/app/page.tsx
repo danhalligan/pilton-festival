@@ -37,7 +37,7 @@ export default async function HomePage() {
 
               {/* Text Box inspired by 2025 programme */}
               <div className="bg-programme-box border-4 border-programme-border rounded-3xl p-8 md:p-12 mb-8 shadow-lg">
-                <h1 className="text-5xl md:text-6xl font-display font-bold text-forest-700 mb-6">
+                <h1 className="text-5xl md:text-6xl font-display font-bold text-forest-700 mb-6 tracking-tight">
                   Pilton Green Man Day
                 </h1>
                 <p className="text-xl md:text-2xl text-programme-text/80 leading-relaxed">
