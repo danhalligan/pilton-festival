@@ -3,16 +3,16 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
-import { Card, CardContent, CardHeader } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { NewsletterSignup } from '@/components/ui/NewsletterSignup'
+import { NewsCarousel } from '@/components/ui/NewsCarousel'
 import { ScrollToNewsletterButton } from '@/components/ui/ScrollToNewsletterButton'
 import { ParallaxBackground } from '@/components/ui/ParallaxBackground'
 import { getAssetPath } from '@/lib/utils'
-import { getFeaturedNewsArticles } from '@/lib/news'
+import { getRecentNewsArticles } from '@/lib/news'
 
 export default async function HomePage() {
-  const featuredNews = await getFeaturedNewsArticles(3)
+  const recentNews = await getRecentNewsArticles(5)
   return (
     <div className="min-h-screen">
       <Header />
@@ -71,23 +71,7 @@ export default async function HomePage() {
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {featuredNews.map((article) => (
-                <Card key={article.slug} hover>
-                  <CardHeader>
-                    <h3 className="text-xl font-semibold text-forest-700">{article.title}</h3>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-600 mb-4">
-                      {article.excerpt}
-                    </p>
-                    <Link href={`/news/${article.slug}`}>
-                      <Button variant="ghost" size="sm">Read More</Button>
-                    </Link>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+            <NewsCarousel articles={recentNews} />
           </div>
         </section>
 

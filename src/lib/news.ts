@@ -73,6 +73,11 @@ export async function getFeaturedNewsArticles(limit: number = 3): Promise<NewsAr
   return allNews.filter(article => article.featured).slice(0, limit)
 }
 
+export async function getRecentNewsArticles(limit: number = 5): Promise<NewsArticle[]> {
+  const allNews = await getAllNewsArticles()
+  return allNews.slice(0, limit) // Already sorted by date (newest first)
+}
+
 export async function getNewsArticleBySlug(slug: string): Promise<NewsArticle | null> {
   try {
     const fullPath = path.join(newsDirectory, `${slug}.md`)
