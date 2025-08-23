@@ -1,17 +1,17 @@
-import React from 'react'
-import Link from 'next/link'
-import { Header } from '@/components/layout/Header'
-import { Footer } from '@/components/layout/Footer'
-import { Button } from '@/components/ui/Button'
-import { FestivalTabs } from '@/components/ui/FestivalTabs'
-import { MemorialCarousel } from '@/components/ui/MemorialCarousel'
-import { getAssetPath } from '@/lib/utils'
-import { getAllFestivalArchives } from '@/lib/festivals'
-import { getAllMemorials } from '@/lib/memorials'
+import React from "react";
+import Link from "next/link";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { Button } from "@/components/ui/Button";
+import { FestivalTabs } from "@/components/ui/FestivalTabs";
+import { MemorialCarousel } from "@/components/ui/MemorialCarousel";
+import { getAssetPath } from "@/lib/utils";
+import { getAllFestivalArchives } from "@/lib/festivals";
+import { getAllMemorials } from "@/lib/memorials";
 
 export default async function ArchivePage() {
-  const pastFestivals = await getAllFestivalArchives()
-  const memorials = await getAllMemorials()
+  const pastFestivals = await getAllFestivalArchives();
+  const memorials = await getAllMemorials();
   return (
     <div className="min-h-screen">
       <Header />
@@ -23,7 +23,9 @@ export default async function ArchivePage() {
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: `url(${getAssetPath('/images/original/successful-pageant.jpg')})`
+              backgroundImage: `url(${getAssetPath(
+                "/images/original/successful-pageant.jpg"
+              )})`,
             }}
           ></div>
 
@@ -39,8 +41,9 @@ export default async function ArchivePage() {
                 Celebrating 40 years of community spirit
               </p>
               <p className="text-lg max-w-2xl mx-auto drop-shadow-md">
-                Take a journey through the history of Pilton Green Man Day, from our
-                humble beginnings in 1985 to the vibrant community celebration we know today.
+                Take a journey through the history of Pilton Green Man Day, from
+                our humble beginnings in 1985 to the vibrant community
+                celebration we know today.
               </p>
             </div>
           </div>
@@ -59,70 +62,84 @@ export default async function ArchivePage() {
 
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
-                  <div className="w-20 h-20 bg-forest-500 rounded-full flex items-center justify-center text-white font-bold">
+                  <div className="w-20 h-20 bg-forest-500 rounded-full flex items-center justify-center text-white font-bold shrink-0">
                     1982
                   </div>
                   <div>
-                    <h3 className="font-semibold text-forest-700">Festival Revival</h3>
+                    <h3 className="font-semibold text-forest-700 text-xl">
+                      Festival Revival
+                    </h3>
                     <p className="text-sm text-gray-600">
-                      Rev. Anthony Geering instrumental in reviving the historic Festival as part of a month-long programme
+                      Rev. Anthony Geering instrumental in reviving the historic
+                      Festival as part of a month-long programme
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <div className="w-20 h-20 bg-forest-500 rounded-full flex items-center justify-center text-white font-bold">
+                  <div className="w-20 h-20 bg-forest-500 rounded-full flex items-center justify-center text-white font-bold shrink-0">
                     1995
                   </div>
                   <div>
-                    <h3 className="font-semibold text-forest-700">First Green Man Day</h3>
+                    <h3 className="font-semibold text-forest-700 text-xl">
+                      First Green Man Day
+                    </h3>
                     <p className="text-sm text-gray-600">
-                      The first modern Green Man Day was held, with Albert Linacre and his sewing ladies making the distinctive costumes
+                      The first modern Green Man Day was held, with Albert
+                      Linacre and his sewing ladies making the distinctive
+                      costumes
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <div className="w-20 h-20 bg-forest-500 rounded-full flex items-center justify-center text-white font-bold">
+                  <div className="w-20 h-20 bg-forest-500 rounded-full flex items-center justify-center text-white font-bold shrink-0">
                     2016
                   </div>
                   <div>
-                    <h3 className="font-semibold text-forest-700">CIO Formation</h3>
+                    <h3 className="font-semibold text-forest-700 text-xl">
+                      CIO Formation
+                    </h3>
                     <p className="text-sm text-gray-600">
-                      Pilton Green Man CIO successfully registered with the Charity Commission
+                      Pilton Green Man CIO successfully registered with the
+                      Charity Commission
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <div className="w-20 h-20 bg-forest-600 rounded-full flex items-center justify-center text-white font-bold">
+                  <div className="w-20 h-20 bg-forest-600 rounded-full flex items-center justify-center text-white font-bold shrink-0">
                     2021
                   </div>
                   <div>
-                    <h3 className="font-semibold text-forest-700">Manning's Pit Saved</h3>
+                    <h3 className="font-semibold text-forest-700 text-xl">
+                      Manning's Pit Saved
+                    </h3>
                     <p className="text-sm text-gray-600">
-                      On 18th June 2021, Manning's Pit was secured for community and protected forever from development
+                      On 18th June 2021, Manning's Pit was secured for community
+                      and protected forever from development
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <div className="w-20 h-20 bg-forest-400 rounded-full flex items-center justify-center text-white font-bold">
+                  <div className="w-20 h-20 bg-forest-400 rounded-full flex items-center justify-center text-white font-bold shrink-0">
                     2025
                   </div>
                   <div>
-                    <h3 className="font-semibold text-forest-700">30th Anniversary</h3>
+                    <h3 className="font-semibold text-forest-700 text-xl">
+                      30th Anniversary
+                    </h3>
                     <p className="text-sm text-gray-600">
-                      Celebrating 30 years of the modern Green Man Day tradition with continued community spirit
+                      Celebrating 30 years of the modern Green Man Day tradition
+                      with continued community spirit
                     </p>
                   </div>
                 </div>
               </div>
 
               <div className="text-center mt-8">
-                <Button variant="primary">
-                  Submit Your Festival Memories
-                </Button>
+                <Button variant="primary">Submit Your Festival Memories</Button>
               </div>
             </div>
           </div>
@@ -140,5 +157,5 @@ export default async function ArchivePage() {
 
       <Footer />
     </div>
-  )
+  );
 }
