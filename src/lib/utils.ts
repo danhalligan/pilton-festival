@@ -29,7 +29,7 @@ export function slugify(text: string): string {
 }
 
 // Helper function to get correct asset path for GitHub Pages
+// Note: Next.js handles basePath automatically via next.config.js, so we just return the path
 export function getAssetPath(path: string): string {
-  const basePath = process.env.NODE_ENV === 'production' ? '/pilton-festival' : ''
-  return `${basePath}${path}`
+  return path
 }
