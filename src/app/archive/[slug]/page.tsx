@@ -1,40 +1,40 @@
-import React from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { notFound } from 'next/navigation'
-import { Header } from '@/components/layout/Header'
-import { Footer } from '@/components/layout/Footer'
-import { Button } from '@/components/ui/Button'
-import { Gallery } from '@/components/ui/Gallery'
-import { Card } from '@/components/ui/Card'
-import { getFestivalArchiveBySlug, getAllFestivalSlugs } from '@/lib/festivals'
-import { getAssetPath } from '@/lib/utils'
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { Button } from "@/components/ui/Button";
+import { Gallery } from "@/components/ui/Gallery";
+import { Card } from "@/components/ui/Card";
+import { getFestivalArchiveBySlug, getAllFestivalSlugs } from "@/lib/festivals";
+import { getAssetPath } from "@/lib/utils";
 
 interface FestivalPageProps {
   params: Promise<{
-    slug: string
-  }>
+    slug: string;
+  }>;
 }
 
 export async function generateStaticParams() {
-  const slugs = getAllFestivalSlugs()
+  const slugs = getAllFestivalSlugs();
   return slugs.map((slug) => ({
     slug,
-  }))
+  }));
 }
 
 export default async function FestivalPage({ params }: FestivalPageProps) {
-  const { slug } = await params
-  const festival = await getFestivalArchiveBySlug(slug)
+  const { slug } = await params;
+  const festival = await getFestivalArchiveBySlug(slug);
 
   if (!festival) {
-    notFound()
+    notFound();
   }
 
   const formatDate = (dateString: string) => {
     // Already formatted in the markdown, so just return as is
-    return dateString
-  }
+    return dateString;
+  };
 
   return (
     <div className="min-h-screen">
@@ -45,16 +45,31 @@ export default async function FestivalPage({ params }: FestivalPageProps) {
         <section className="bg-gradient-to-b from-forest-50 to-white py-16">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8">
-              <Link href="/archive" className="inline-flex items-center text-forest-600 hover:text-forest-500 mb-6">
-                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+              <Link
+                href="/archive"
+                className="inline-flex items-center text-forest-600 hover:text-forest-500 mb-6"
+              >
+                <svg
+                  className="w-4 h-4 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 19l-7-7m0 0l7-7m-7 7h18"
+                  />
                 </svg>
                 Back to Archive
               </Link>
               <h1 className="text-4xl md:text-5xl font-display font-bold text-forest-700 mb-4">
                 {festival.title}
               </h1>
-              <p className="text-xl text-forest-500 mb-2">{formatDate(festival.date)}</p>
+              <p className="text-xl text-forest-500 mb-2">
+                {formatDate(festival.date)}
+              </p>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                 {festival.description}
               </p>
@@ -86,19 +101,27 @@ export default async function FestivalPage({ params }: FestivalPageProps) {
                 </h3>
                 <div className="space-y-3 text-sm">
                   <div>
-                    <span className="font-semibold text-forest-600">Year:</span> {festival.year}
+                    <span className="font-semibold text-forest-600">Year:</span>{" "}
+                    {festival.year}
                   </div>
                   <div>
-                    <span className="font-semibold text-forest-600">Date:</span> {festival.date}
+                    <span className="font-semibold text-forest-600">Date:</span>{" "}
+                    {festival.date}
                   </div>
                   {festival.weather && (
                     <div>
-                      <span className="font-semibold text-forest-600">Weather:</span> {festival.weather}
+                      <span className="font-semibold text-forest-600">
+                        Weather:
+                      </span>{" "}
+                      {festival.weather}
                     </div>
                   )}
                   {festival.attendance && (
                     <div>
-                      <span className="font-semibold text-forest-600">Attendance:</span> {festival.attendance}
+                      <span className="font-semibold text-forest-600">
+                        Attendance:
+                      </span>{" "}
+                      {festival.attendance}
                     </div>
                   )}
                 </div>
@@ -126,7 +149,7 @@ export default async function FestivalPage({ params }: FestivalPageProps) {
                 </h3>
                 <div className="space-y-3">
                   {festival.pdfBrochure && (
-                    <Link href={getAssetPath(festival.pdfBrochure)}>
+                    <Link href={festival.pdfBrochure}>
                       <Button variant="secondary" size="sm" className="w-full">
                         Download Programme (PDF)
                       </Button>
@@ -166,7 +189,8 @@ export default async function FestivalPage({ params }: FestivalPageProps) {
               Explore More Festival History
             </h2>
             <p className="text-gray-600 mb-8">
-              Discover more stories from our 40 years of Green Man Day celebrations.
+              Discover more stories from our 40 years of Green Man Day
+              celebrations.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/archive">
@@ -186,5 +210,5 @@ export default async function FestivalPage({ params }: FestivalPageProps) {
 
       <Footer />
     </div>
-  )
+  );
 }

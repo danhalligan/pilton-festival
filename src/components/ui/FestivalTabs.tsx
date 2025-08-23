@@ -1,24 +1,24 @@
-'use client'
+"use client";
 
-import React, { useState } from 'react'
-import Link from 'next/link'
-import { Card } from './Card'
-import { Button } from './Button'
-import { FestivalPhotoCarousel } from './FestivalPhotoCarousel'
-import { getAssetPath } from '@/lib/utils'
-import { FestivalArchive } from '@/types/festivals'
+import React, { useState } from "react";
+import Link from "next/link";
+import { Card } from "./Card";
+import { Button } from "./Button";
+import { FestivalPhotoCarousel } from "./FestivalPhotoCarousel";
+import { getAssetPath } from "@/lib/utils";
+import { FestivalArchive } from "@/types/festivals";
 
 interface FestivalTabsProps {
-  festivals: FestivalArchive[]
+  festivals: FestivalArchive[];
 }
 
 export function FestivalTabs({ festivals }: FestivalTabsProps) {
-  const [activeTab, setActiveTab] = useState(festivals[0]?.year || 2024)
+  const [activeTab, setActiveTab] = useState(festivals[0]?.year || 2024);
 
-  const activeFestival = festivals.find(f => f.year === activeTab)
+  const activeFestival = festivals.find((f) => f.year === activeTab);
 
   if (!activeFestival) {
-    return <div>No festival data available</div>
+    return <div>No festival data available</div>;
   }
 
   return (
@@ -32,8 +32,8 @@ export function FestivalTabs({ festivals }: FestivalTabsProps) {
               onClick={() => setActiveTab(festival.year)}
               className={`inline-flex items-center justify-center px-6 py-3 font-semibold rounded-lg transition-colors ${
                 activeTab === festival.year
-                  ? 'bg-forest-600 text-white shadow-lg'
-                  : 'text-forest-700 hover:bg-forest-100 border border-forest-200'
+                  ? "bg-forest-600 text-white shadow-lg"
+                  : "text-forest-700 hover:bg-forest-100 border border-forest-200"
               }`}
             >
               {festival.year}
@@ -50,8 +50,12 @@ export function FestivalTabs({ festivals }: FestivalTabsProps) {
               <h2 className="text-3xl font-display font-bold text-forest-700 mb-2">
                 {activeFestival.title}
               </h2>
-              <p className="text-xl text-forest-500 mb-4">{activeFestival.date}</p>
-              <p className="text-gray-600 max-w-3xl mx-auto">{activeFestival.description}</p>
+              <p className="text-xl text-forest-500 mb-4">
+                {activeFestival.date}
+              </p>
+              <p className="text-gray-600 max-w-3xl mx-auto">
+                {activeFestival.description}
+              </p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
@@ -59,9 +63,7 @@ export function FestivalTabs({ festivals }: FestivalTabsProps) {
                 <h3 className="text-xl font-semibold text-forest-700 mb-4">
                   Photo Gallery
                 </h3>
-                <FestivalPhotoCarousel
-                  images={activeFestival.images}
-                />
+                <FestivalPhotoCarousel images={activeFestival.images} />
               </div>
 
               <div>
@@ -73,7 +75,9 @@ export function FestivalTabs({ festivals }: FestivalTabsProps) {
                     {activeFestival.highlights.map((highlight, index) => (
                       <li key={index} className="flex items-start">
                         <span className="text-forest-500 mr-2">•</span>
-                        <span className="text-sm text-gray-600">{highlight}</span>
+                        <span className="text-sm text-gray-600">
+                          {highlight}
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -89,7 +93,7 @@ export function FestivalTabs({ festivals }: FestivalTabsProps) {
                   </Button>
                 </Link>
                 {activeFestival.pdfBrochure && (
-                  <Link href={getAssetPath(activeFestival.pdfBrochure)}>
+                  <Link href={activeFestival.pdfBrochure}>
                     <Button variant="ghost" size="sm">
                       Programme (PDF)
                     </Button>
@@ -104,5 +108,5 @@ export function FestivalTabs({ festivals }: FestivalTabsProps) {
         </div>
       </div>
     </div>
-  )
+  );
 }
