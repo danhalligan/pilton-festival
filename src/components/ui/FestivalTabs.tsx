@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { Card } from './Card'
 import { Button } from './Button'
-import { Gallery } from './Gallery'
+import { FestivalPhotoCarousel } from './FestivalPhotoCarousel'
 import { getAssetPath } from '@/lib/utils'
 import { FestivalArchive } from '@/types/festivals'
 
@@ -59,10 +59,8 @@ export function FestivalTabs({ festivals }: FestivalTabsProps) {
                 <h3 className="text-xl font-semibold text-forest-700 mb-4">
                   Photo Gallery
                 </h3>
-                <Gallery
+                <FestivalPhotoCarousel
                   images={activeFestival.images}
-                  columns={activeFestival.images.length >= 6 ? 3 : 2}
-                  showCategories={false}
                 />
               </div>
 
