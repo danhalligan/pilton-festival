@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import Image from 'next/image'
-import { cn } from '@/lib/utils'
+import { cn, getAssetPath } from '@/lib/utils'
 
 export interface GalleryImage {
   id: string
@@ -101,7 +101,7 @@ export function Gallery({
           >
             <div className="relative aspect-square overflow-hidden">
               <Image
-                src={image.src}
+                src={getAssetPath(image.src)}
                 alt={image.alt}
                 fill
                 className="object-cover transition-transform duration-300 group-hover:scale-105"
@@ -181,7 +181,7 @@ export function Gallery({
             {/* Image */}
             <div className="relative max-h-[80vh] max-w-[90vw]">
               <Image
-                src={selectedImage.src}
+                src={getAssetPath(selectedImage.src)}
                 alt={selectedImage.alt}
                 width={1200}
                 height={800}

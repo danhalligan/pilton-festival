@@ -152,7 +152,7 @@ export default async function FestivalPage({ params }: FestivalPageProps) {
                 <Gallery
                   images={festival.images}
                   columns={festival.images.length >= 6 ? 3 : 2}
-                  showCategories={true}
+                  showCategories={false}
                 />
               </div>
             </div>

@@ -23,6 +23,7 @@ function processImagePaths(htmlContent: string): string {
   )
 }
 
+
 export async function getAllFestivalArchives(): Promise<FestivalArchive[]> {
   // Get file names under /content/festivals
   const fileNames = fs.readdirSync(festivalsDirectory)

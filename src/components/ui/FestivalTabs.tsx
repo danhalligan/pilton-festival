@@ -62,7 +62,7 @@ export function FestivalTabs({ festivals }: FestivalTabsProps) {
                 <Gallery
                   images={activeFestival.images}
                   columns={activeFestival.images.length >= 6 ? 3 : 2}
-                  showCategories={true}
+                  showCategories={false}
                 />
               </div>
 
