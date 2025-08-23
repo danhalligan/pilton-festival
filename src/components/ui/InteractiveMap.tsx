@@ -208,16 +208,6 @@ export function InteractiveMap({
 
   return (
     <div className={cn("bg-white rounded-lg shadow-lg", className)}>
-      <div className="p-4 border-b border-gray-200">
-        <h3 className="text-lg font-semibold text-forest-700">
-          Festival Site Map
-        </h3>
-        <p className="text-sm text-gray-600">
-          Interactive festival map and directions to Pilton Green Man Day - July
-          19th, 10am to 5pm
-        </p>
-      </div>
-
       {/* Interactive Festival Map Section */}
       <div className="p-4 border-b border-gray-200">
         <h4 className="text-lg font-semibold text-forest-700 mb-2">
@@ -290,23 +280,23 @@ export function InteractiveMap({
                       {displayLocation.description}
                     </p>
                   )}
-                  
+
                   {/* Arrow pointing down to the marker */}
-                  <div 
+                  <div
                     className="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0"
                     style={{
                       borderLeft: "12px solid transparent",
-                      borderRight: "12px solid transparent", 
+                      borderRight: "12px solid transparent",
                       borderTop: "12px solid #e5e7eb", // border-gray-200
                     }}
                   ></div>
-                  <div 
+                  <div
                     className="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0"
                     style={{
                       borderLeft: "10px solid transparent",
                       borderRight: "10px solid transparent",
                       borderTop: "10px solid white",
-                      marginTop: "-2px"
+                      marginTop: "-2px",
                     }}
                   ></div>
                 </div>

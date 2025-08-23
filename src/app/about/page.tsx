@@ -53,22 +53,40 @@ export default function AboutPage() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div className="prose prose-lg">
                   <p className="mb-4">
-                    The Green Man is an ancient symbol of rebirth, nature, and the eternal
-                    cycle of growth. Found in churches, buildings, and folklore throughout
-                    Britain, the Green Man represents the spirit of the woodlands and the
-                    renewal that comes with each season.
+                    The Green Man is an ancient symbol of rebirth, nature, and fertility, 
+                    traditionally depicted as a face sprouting foliage. Found in churches, 
+                    buildings, and folklore throughout Britain, the Green Man represents the 
+                    spirit of the woodlands and the renewal that comes with each season. 
+                    Here in Pilton, a Green Man carving can be found in St Mary the Virgin 
+                    Parish Church, connecting our modern celebration to centuries-old traditions.
                   </p>
 
+                  <h3 className="text-lg font-semibold text-forest-600 mb-3">Medieval Foundations</h3>
                   <p className="mb-4">
-                    In Pilton, the Green Man tradition has been celebrated for generations,
-                    connecting our community to the natural world around us and to the
-                    agricultural heritage that has shaped our landscape for centuries.
+                    Our festival has deep historical roots. Pilton was granted a market charter 
+                    by King Edward III during his reign (1327-1377), establishing our village's 
+                    right to host markets and fairs. This ancient charter still enables 
+                    craftsmen to sell their work and charities to raise funds during our 
+                    modern festival celebrations.
                   </p>
 
+                  <h3 className="text-lg font-semibold text-forest-600 mb-3">The Revival Story</h3>
                   <p className="mb-4">
-                    Our annual Green Man Day celebrates this connection, bringing together
-                    people of all ages to enjoy music, food, crafts, and community spirit
-                    in North Devon.
+                    The modern Pilton Festival was revived in 1982 through the instrumental 
+                    work of Rev. Anthony Geering. His vision brought back the historic festival 
+                    as part of a month-long programme featuring events throughout June and July, 
+                    including a historic pageant, stalls along Pilton Street, and a Flower 
+                    Festival in the church.
+                  </p>
+
+                  <h3 className="text-lg font-semibold text-forest-600 mb-3">Sacred and Secular Unity</h3>
+                  <p className="mb-4">
+                    Our festival ritual beautifully represents the integration of pagan and 
+                    Christian traditions, symbolizing "the initial antagonism" between the 
+                    Prior and the Green Man. This reflects the complex history of our village, 
+                    where the Benedictine Priory of Pilton (a cell of Malmesbury Abbey) once 
+                    stood where St Mary's Church stands today, creating a unique blend of 
+                    spiritual traditions that continues in our celebrations.
                   </p>
                 </div>
 
@@ -79,25 +97,45 @@ export default function AboutPage() {
                     </h3>
                     <div className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-forest-600">1985</h4>
-                        <p className="text-sm">First Pilton Green Man Day organised</p>
+                        <h4 className="font-semibold text-forest-600">1327-1377</h4>
+                        <p className="text-sm">Market charter granted by King Edward III</p>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-forest-600">1991</h4>
-                        <p className="text-sm">Pilton Theatre group established</p>
+                        <h4 className="font-semibold text-forest-600">1982</h4>
+                        <p className="text-sm">Festival revived by Rev. Anthony Geering</p>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-forest-600">2010</h4>
-                        <p className="text-sm">Community Interest Organisation formed</p>
+                        <h4 className="font-semibold text-forest-600">1995</h4>
+                        <p className="text-sm">First modern Green Man Day celebration</p>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-forest-600">2023</h4>
-                        <p className="text-sm">Manning's Pit designated as SSSI</p>
+                        <h4 className="font-semibold text-forest-600">2016</h4>
+                        <p className="text-sm">Pilton Green Man CIO officially formed</p>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-forest-600">2021</h4>
+                        <p className="text-sm">Manning's Pit secured for community</p>
                       </div>
                       <div>
                         <h4 className="font-semibold text-forest-600">2025</h4>
-                        <p className="text-sm">40th anniversary celebration planned</p>
+                        <p className="text-sm">30th anniversary of modern Green Man Day</p>
                       </div>
+                    </div>
+                    
+                    <div className="mt-6 pt-4 border-t border-gray-200">
+                      <p className="text-xs text-gray-600 mb-3">
+                        Historical footage from the 1982 festival revival has been preserved 
+                        and transferred to DVD, documenting this important moment in our 
+                        community's history.
+                      </p>
+                      <a 
+                        href="https://www.thepiltonstory.org/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-xs text-forest-600 hover:text-forest-700 underline"
+                      >
+                        Learn more from The Pilton Story →
+                      </a>
                     </div>
                   </Card>
                 </div>
