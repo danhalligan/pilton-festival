@@ -63,15 +63,24 @@ export default async function HomePage() {
         </ParallaxBackground>
 
         {/* Latest News Section */}
-        <section className="section-padding">
+        <section className="py-12">
           <div className="max-w-7xl mx-auto container-padding">
-            <div className="text-center mb-12">
+            <div className="text-center mb-8">
               <h2 className="text-4xl font-display font-bold text-forest-700 mb-4">
                 Latest News & Events
               </h2>
             </div>
 
             <NewsCarousel articles={recentNews} />
+            
+            {/* View All News Link */}
+            <div className="text-center mt-8">
+              <Link href="/news">
+                <Button variant="secondary" size="lg">
+                  View All News Stories
+                </Button>
+              </Link>
+            </div>
           </div>
         </section>
 

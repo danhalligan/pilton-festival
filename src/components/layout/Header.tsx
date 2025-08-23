@@ -1,28 +1,29 @@
-'use client'
+"use client";
 
-import React, { useState } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { cn, getAssetPath } from '@/lib/utils'
+import React, { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { cn, getAssetPath } from "@/lib/utils";
 
 interface HeaderProps {
-  className?: string
+  className?: string;
 }
 
 export function Header({ className }: HeaderProps) {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const navigation = [
-    { name: 'Festival', href: '/festival' },
-    { name: 'Community', href: '/community' },
-    { name: 'Theatre', href: '/theatre' },
-    { name: 'About', href: '/about' },
-    { name: 'Archive', href: '/archive' },
-    { name: 'Get Involved', href: '/get-involved' },
-  ]
+    { name: "Festival", href: "/festival" },
+    { name: "Community", href: "/community" },
+    { name: "About", href: "/about" },
+    { name: "Archive", href: "/archive" },
+    { name: "Get Involved", href: "/get-involved" },
+  ];
 
   return (
-    <header className={cn('bg-white shadow-sm border-b border-leaf-light', className)}>
+    <header
+      className={cn("bg-white shadow-sm border-b border-leaf-light", className)}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
@@ -37,35 +38,48 @@ export function Header({ className }: HeaderProps) {
               />
             </div>
             <div>
-              <h1 className="text-2xl font-display font-bold text-forest-700">Pilton Festival</h1>
+              <h1 className="text-2xl font-display font-bold text-forest-700">
+                Pilton Festival
+              </h1>
               <p className="text-sm text-forest-600">Green Man Day</p>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-4">
             {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="nav-link py-2"
-              >
+              <Link key={item.name} href={item.href} className="nav-link py-2">
                 {item.name}
               </Link>
             ))}
           </nav>
 
           {/* Mobile menu button */}
-          <button 
+          <button
             className="md:hidden p-2 text-forest-600 hover:text-forest-500"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
               {isMobileMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               )}
             </svg>
           </button>
@@ -90,5 +104,5 @@ export function Header({ className }: HeaderProps) {
         </div>
       )}
     </header>
-  )
+  );
 }

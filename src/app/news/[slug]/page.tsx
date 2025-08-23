@@ -47,11 +47,11 @@ export default async function NewsPage({ params }: NewsPageProps) {
         <section className="bg-gradient-to-b from-forest-50 to-white py-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8">
-              <Link href="/" className="inline-flex items-center text-forest-600 hover:text-forest-500 mb-6">
+              <Link href="/news" className="inline-flex items-center text-forest-600 hover:text-forest-500 mb-6">
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                 </svg>
-                Back to Homepage
+                Back to News
               </Link>
               <h1 className="text-4xl md:text-5xl font-display font-bold text-forest-700 mb-4">
                 {article.title}
@@ -95,9 +95,9 @@ export default async function NewsPage({ params }: NewsPageProps) {
             {/* Article Footer */}
             <div className="mt-12 pt-8 border-t border-gray-200">
             <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-              <Link href="/">
+              <Link href="/news">
                 <Button variant="secondary">
-                  Back to Homepage
+                  More News Stories
                 </Button>
               </Link>
               <div className="text-sm text-gray-500">

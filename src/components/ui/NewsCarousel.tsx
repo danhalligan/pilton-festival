@@ -4,7 +4,6 @@ import React, { useState, useEffect, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Link from "next/link";
 import { Card, CardContent, CardHeader } from "./Card";
-import { Button } from "./Button";
 import { cn, getAssetPath } from "@/lib/utils";
 import { NewsArticle } from "@/types/news";
 
