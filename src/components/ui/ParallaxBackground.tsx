@@ -15,7 +15,6 @@ export function ParallaxBackground({
   className = "",
   children,
   muted = false,
-  blur = true,
 }: ParallaxBackgroundProps) {
   const [parallaxOffset, setParallaxOffset] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
@@ -62,9 +61,7 @@ export function ParallaxBackground({
     >
       {/* Parallax Background */}
       <div
-        className={`absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform ${
-          blur ? "blur-[3px]" : ""
-        }`}
+        className={`absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform blur-[3px]"`}
         style={{
           backgroundImage: `url(${getAssetPath(backgroundImage)})`,
           transform: `translate3d(0, ${parallaxOffset}px, 0)`,
