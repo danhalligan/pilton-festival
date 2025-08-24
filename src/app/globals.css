@@ -23,6 +23,19 @@
   h5,
   h6 {
     @apply font-display font-semibold text-forest-800;
+    letter-spacing: -0.05em; /* Tighter letter spacing on mobile */
+  }
+
+  /* Better letter spacing for larger screens */
+  @media (min-width: 640px) {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      letter-spacing: -0.01em;
+    }
   }
 
   h1 {
