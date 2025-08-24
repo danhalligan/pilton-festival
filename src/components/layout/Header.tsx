@@ -46,7 +46,7 @@ export function Header({ className }: HeaderProps) {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-4">
+          <nav className="hidden md:flex space-x-2">
             {navigation.map((item) => (
               <Link key={item.name} href={item.href} className="nav-link py-2">
                 {item.name}

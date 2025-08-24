@@ -31,7 +31,8 @@
       "mcp__playwright__browser_click",
       "mcp__playwright__browser_resize",
       "mcp__playwright__browser_snapshot",
-      "WebFetch(domain:piltonfestival.co.uk)"
+      "WebFetch(domain:piltonfestival.co.uk)",
+      "Bash(convert:*)"
     ],
     "deny": [],
     "ask": [],
