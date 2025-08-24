@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { Card } from '@/components/ui/Card'
@@ -79,9 +80,11 @@ export default function CommunityPage() {
                       <p><strong>Last Trustees Meeting:</strong> 17th March 2025</p>
                       <p><strong>Next Meeting:</strong> June in the Reform Inn</p>
                     </div>
-                    <Button variant="primary" className="w-full mb-2">
-                      Apply for Award
-                    </Button>
+                    <Link href="/apply-grant">
+                      <Button variant="primary" className="w-full mb-2">
+                        Apply for Award
+                      </Button>
+                    </Link>
                     <p className="text-xs text-center text-gray-500">
                       Contact us through Facebook or via our contacts page
                     </p>

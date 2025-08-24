@@ -1,7 +1,7 @@
 {
   "name": "Pilton Festival Site - Next.js Development",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bullseye",
-  
+
   "features": {
     "ghcr.io/devcontainers/features/git:1": {},
     "ghcr.io/devcontainers/features/github-cli:1": {}
@@ -46,7 +46,6 @@
   },
 
   "postCreateCommand": "npm install",
-  "postStartCommand": "npm run dev",
 
   "remoteUser": "node",
   "containerEnv": {
