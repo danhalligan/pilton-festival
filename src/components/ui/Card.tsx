@@ -6,13 +6,15 @@ interface CardProps {
   className?: string
   variant?: 'default' | 'festival' | 'community' | 'theatre' | 'grants' | 'bordered'
   hover?: boolean
+  onClick?: () => void
 }
 
 export function Card({
   children,
   className,
   variant = 'default',
-  hover = true
+  hover = true,
+  onClick
 }: CardProps) {
   const baseClasses = 'bg-white rounded-2xl p-4'
 
@@ -35,6 +37,7 @@ export function Card({
         hoverClasses,
         className
       )}
+      onClick={onClick}
     >
       {children}
     </div>

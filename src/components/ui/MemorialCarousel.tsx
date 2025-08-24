@@ -82,7 +82,10 @@ export function MemorialCarousel({ memorials, className }: MemorialCarouselProps
                 key={memorial.slug}
                 className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 min-w-0"
               >
-                <Card className="h-full transition-all duration-300 cursor-pointer hover:shadow-lg">
+                <Card 
+                  className="h-full transition-all duration-300 cursor-pointer hover:shadow-lg hover:scale-[1.02]"
+                  onClick={() => openMemorialModal(memorial)}
+                >
                   {/* Memorial image or placeholder */}
                   <div className="relative h-48 bg-gradient-to-br from-forest-100 to-forest-200 rounded-t-lg overflow-hidden flex items-center justify-center">
                     {memorial.image ? (
@@ -122,7 +125,7 @@ export function MemorialCarousel({ memorials, className }: MemorialCarouselProps
                     </p>
 
                     {/* Key contributions preview */}
-                    <div className="mb-4">
+                    <div>
                       <h4 className="text-xs font-semibold text-forest-600 mb-2">Key Contributions:</h4>
                       <div className="flex flex-wrap gap-1">
                         {memorial.keyContributions.slice(0, 2).map((contribution, index) => (
@@ -140,15 +143,6 @@ export function MemorialCarousel({ memorials, className }: MemorialCarouselProps
                         )}
                       </div>
                     </div>
-
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={() => openMemorialModal(memorial)}
-                      className="w-full"
-                    >
-                      Read More
-                    </Button>
 
                   </div>
                 </Card>
